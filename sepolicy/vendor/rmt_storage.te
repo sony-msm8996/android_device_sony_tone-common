@@ -1,2 +1,5 @@
-r_dir_file(rmt_storage, sysfs_data)
-r_dir_file(rmt_storage, sysfs_ssr)
+# DebugFS access
+userdebug_or_eng(`
+  allow rmt_storage debugfs_rmt:dir search;
+  allow rmt_storage debugfs_rmt:file rw_file_perms;
+')
