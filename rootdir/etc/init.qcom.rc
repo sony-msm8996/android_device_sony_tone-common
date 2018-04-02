@@ -649,6 +649,7 @@ service secd /vendor/bin/secd
     group system
     socket secd_devsec_sock stream 0660 system oem_2996
     socket secd_credmgr_sock stream 0660 system oem_2996
+    setenv LD_PRELOAD libta_drm_ext.so
 
 service vendor.semc.hardware.secd-1-0 /vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
     class hal
