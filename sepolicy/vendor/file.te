@@ -5,3 +5,4 @@ type tad_socket, file_type;
 
 # LTALabel
 type lta_label, fs_type;
+type tad_socket, file_type;
