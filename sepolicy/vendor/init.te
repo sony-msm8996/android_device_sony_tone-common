@@ -1,8 +1,8 @@
 # Allow init to read files in /lta-label
 r_dir_file(init, lta_label)
 
-# Allow init to mount on idd_data_file, idd_rca_file, qns_file
-allow init { idd_data_file idd_rca_file qns_file }:dir mounton;
+# Allow init to mount on idd_data_file, idd_root_dir, idd_rca_file, qns_file
+allow init { idd_data_file idd_root_dir idd_rca_file qns_file }:dir mounton;
 
 # Allow init to setattr on ta_block_device
 allow init ta_block_device:blk_file setattr;
