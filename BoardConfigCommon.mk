@@ -171,6 +171,9 @@ TARGET_RIL_VARIANT := caf
 # Root
 BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware idd persist rca
 
+# Security patch level
+VENDOR_SECURITY_PATCH := 2019-05-01
+
 # SELinux
 include device/qcom/sepolicy/sepolicy.mk
 

@@ -155,10 +155,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
     persist.data.df.iwlan_mux=9 \
     persist.data.df.dev_name=rmnet_usb0
 
-# Security patch level
-PRODUCT_PROPERTY_OVERRIDES += \
-    ro.vendor.build.security_patch=2019-05-01
-
 # SEMC props
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.semc.version.cust=1306-8087 \
