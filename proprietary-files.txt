@@ -423,6 +423,15 @@ vendor/lib/libStDrvInt.so
 vendor/lib/libtzdrmgenprov.so
 vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
 
+# DRM ClearKey - from marlin - PPR2.181005.003
+vendor/bin/hw/android.hardware.drm@1.1-service.clearkey|50821791fc935a98ae6e41a7ee529c8fe9bd47c2
+vendor/etc/init/android.hardware.drm@1.1-service.clearkey.rc|acf0c3c835d4cf105b8832b9fd16046042aad629
+
+# DRM Widevine - from marlin - PPR2.181005.003
+vendor/bin/hw/android.hardware.drm@1.1-service.widevine|2c2455a218eb8d5368f1ccd39bea51be8364a0f3
+vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|5a01d337c1d375ee24a6c8992ba91f54afb7637e
+vendor/lib/libwvhidl.so|37333d17980282275805807bc648bf8516fd4143
+
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib/hw/gatekeeper.msm8996.so
@@ -941,11 +950,6 @@ etc/firmware/tzwvcpybuf.b04
 etc/firmware/tzwvcpybuf.b05
 etc/firmware/tzwvcpybuf.b06
 etc/firmware/tzwvcpybuf.mdt
-
-# Widevine DRM - from marlin - OPM1.171019.011
-vendor/bin/hw/android.hardware.drm@1.0-service.widevine|fd6e14710c196fdd4131afe2ce10c4a5be1b309c
-vendor/etc/init/android.hardware.drm@1.0-service.widevine.rc|51a3168a0dbc064d78ee11ca83614c0cd2e6daa5
-vendor/lib/libwvhidl.so|f7288f7a7ed6765bd1d80d639a0aeb0c31eda795
 
 # WiFi
 vendor/bin/cnss-daemon
