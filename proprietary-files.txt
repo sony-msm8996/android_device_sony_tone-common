@@ -588,7 +588,6 @@ vendor/lib64/libprotobuf-cpp-2.3.0-lite.so
 vendor/lib64/vendor.semc.system.idd.fallback@1.0_vendor.so
 
 # IMS
--app/ims/ims.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/libdiag_system.so
@@ -602,6 +601,8 @@ lib64/lib-imsvtutils.so
 lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so
 lib/libdiag_system.so
+# ims.apk: From daisy - 9/PKQ1.180917.001/V10.0.1.0.PDLMIFJ
+-priv-app/ims/ims.apk|eef47c0b6f250e7f96e7155d84274b1c83940d8f
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
@@ -763,8 +764,8 @@ vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
 
-# RIL framework - gemini - 8.0.0/OPR1.170623.032/8.9.13
-framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
+# RIL framework - daisy - 9/PKQ1.180917.001/V10.0.1.0.PDLMIFJ
+framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
 
 # RIL
 -app/QtiTelephonyService/QtiTelephonyService.apk
