@@ -1,5 +1,7 @@
 # Allow init to read files in /lta-label
 r_dir_file(init, lta_label)
+# Allow init to mount /dsp with adsprpcd_file context
+allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 
 # Allow init to mount on idd_data_file, idd_root_dir, idd_rca_file, qns_file
 allow init { idd_data_file idd_root_dir idd_rca_file qns_file }:dir mounton;
