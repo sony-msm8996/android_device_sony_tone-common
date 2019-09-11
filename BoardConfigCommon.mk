@@ -189,8 +189,8 @@ include device/qcom/sepolicy/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit_msm8996
-TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8996
+TARGET_INIT_VENDOR_LIB := libinit.sony_tone
+TARGET_RECOVERY_DEVICE_MODULES := libinit.sony_tone
 
 # Wifi
 BOARD_WLAN_DEVICE           := bcmdhd
