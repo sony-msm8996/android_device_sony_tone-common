@@ -190,7 +190,7 @@ include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 # Vendor init
-TARGET_INIT_VENDOR_LIB := libinit.sony_tone
+TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit.sony_tone
 TARGET_RECOVERY_DEVICE_MODULES := libinit.sony_tone
 
 # Wifi
