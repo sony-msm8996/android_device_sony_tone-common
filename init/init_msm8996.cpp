@@ -64,12 +64,6 @@ void check_device()
 
 void vendor_load_properties()
 {
-    std::string platform;
-
-    platform = GetProperty("ro.board.platform", "");
-    if (platform != ANDROID_TARGET)
-        return;
-
     check_device();
 
     property_set("dalvik.vm.heapstartsize", "8m");
