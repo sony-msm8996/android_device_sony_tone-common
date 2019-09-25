@@ -186,7 +186,7 @@ BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware idd persist rca
 VENDOR_SECURITY_PATCH := 2019-05-01
 
 # SELinux
-include device/qcom/sepolicy/sepolicy.mk
+include device/qcom/sepolicy-legacy-um/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
