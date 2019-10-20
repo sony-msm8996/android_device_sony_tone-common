@@ -6,6 +6,9 @@ binder_call(rild, hal_idd_default)
 # Allow rild to find hal_idd_hwservice
 allow rild hal_idd_hwservice:hwservice_manager find;
 
+# Allow rild to add somc_hw_radio_hwservice
+allow rild somc_hw_radio_hwservice:hwservice_manager add;
+
 # Allow rild to find hal_secd_hwservice
 allow rild hal_secd_hwservice:hwservice_manager find;
 
