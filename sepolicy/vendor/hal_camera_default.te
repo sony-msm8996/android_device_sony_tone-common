@@ -1,0 +1,2 @@
+# Allow hal_camera_default to read sysfs
+allow hal_camera_default sysfs:file r_file_perms;
