@@ -512,7 +512,7 @@ vendor/lib/libadpcmdec.so|8e9444ceea8dc5da96145489153d7147717c8323
 vendor/lib/libsmwrapper.so|5d861723fe431a39fb51d1ff41e47c731aa78f20
 
 # Machine learning
--vendor/etc/lm/ReferenceFeature.xml
+-vendor/etc/lm/ReferenceFeature.xml|7d45c05b5f2457d031e88307f30b2ea958417042
 vendor/lib64/liblearningmodule.so
 vendor/lib64/libmeters.so
 vendor/lib64/libreffeature.so
