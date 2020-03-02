@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-#define LOG_TAG "android.hardware.light@2.0-service.sony_tone"
+#define LOG_TAG "android.hardware.light@2.0-service.sony"
 
 #include <android-base/logging.h>
 #include <hidl/HidlTransportSupport.h>
@@ -32,35 +32,26 @@ using android::hardware::light::V2_0::implementation::Light;
 
 const static std::string kLcdBacklightPath = "/sys/class/leds/lcd-backlight/brightness";
 const static std::string kLcdMaxBacklightPath = "/sys/class/leds/lcd-backlight/max_brightness";
-const static std::string kButton1BacklightPath = "/sys/class/leds/button-backlight/brightness";
-const static std::string kButton2BacklightPath = "/sys/class/leds/button-backlight1/brightness";
-const static std::string kButton3BacklightPath = "/sys/class/leds/button-backlight2/brightness";
-const static std::string kRedLedPath = "/sys/class/leds/red/brightness";
-const static std::string kGreenLedPath = "/sys/class/leds/green/brightness";
-const static std::string kBlueLedPath = "/sys/class/leds/blue/brightness";
-const static std::string kRedDutyPctsPath = "/sys/class/leds/red/duty_pcts";
-const static std::string kGreenDutyPctsPath = "/sys/class/leds/green/duty_pcts";
-const static std::string kBlueDutyPctsPath = "/sys/class/leds/blue/duty_pcts";
-const static std::string kRedStartIdxPath = "/sys/class/leds/red/start_idx";
-const static std::string kGreenStartIdxPath = "/sys/class/leds/green/start_idx";
-const static std::string kBlueStartIdxPath = "/sys/class/leds/blue/start_idx";
-const static std::string kRedPauseLoPath = "/sys/class/leds/red/pause_lo";
-const static std::string kGreenPauseLoPath = "/sys/class/leds/green/pause_lo";
-const static std::string kBluePauseLoPath = "/sys/class/leds/blue/pause_lo";
-const static std::string kRedPauseHiPath = "/sys/class/leds/red/pause_hi";
-const static std::string kGreenPauseHiPath = "/sys/class/leds/green/pause_hi";
-const static std::string kBluePauseHiPath = "/sys/class/leds/blue/pause_hi";
-const static std::string kRedRampStepMsPath = "/sys/class/leds/red/ramp_step_ms";
-const static std::string kGreenRampStepMsPath = "/sys/class/leds/green/ramp_step_ms";
-const static std::string kBlueRampStepMsPath = "/sys/class/leds/blue/ramp_step_ms";
-const static std::string kRedBlinkPath = "/sys/class/leds/red/blink";
-const static std::string kGreenBlinkPath = "/sys/class/leds/green/blink";
-const static std::string kBlueBlinkPath = "/sys/class/leds/blue/blink";
-const static std::string kRgbBlinkPath = "/sys/class/leds/rgb/rgb_blink";
+const static std::string kRedLedPath = "/sys/class/leds/led:rgb_red/brightness";
+const static std::string kGreenLedPath = "/sys/class/leds/led:rgb_green/brightness";
+const static std::string kBlueLedPath = "/sys/class/leds/led:rgb_blue/brightness";
+const static std::string kRedLutPwmPath = "/sys/class/leds/led:rgb_red/lut_pwm";
+const static std::string kGreenLutPwmPath = "/sys/class/leds/led:rgb_green/lut_pwm";
+const static std::string kBlueLutPwmPath = "/sys/class/leds/led:rgb_blue/lut_pwm";
+const static std::string kRedPauseLoPath = "/sys/class/leds/led:rgb_red/pause_lo_multi";
+const static std::string kGreenPauseLoPath = "/sys/class/leds/led:rgb_green/pause_lo_multi";
+const static std::string kBluePauseLoPath = "/sys/class/leds/led:rgb_blue/pause_lo_multi";
+const static std::string kRedPauseHiPath = "/sys/class/leds/led:rgb_red/pause_hi_multi";
+const static std::string kGreenPauseHiPath = "/sys/class/leds/led:rgb_green/pause_hi_multi";
+const static std::string kBluePauseHiPath = "/sys/class/leds/led:rgb_blue/pause_hi_multi";
+const static std::string kRedStepDurationPath = "/sys/class/leds/led:rgb_red/step_duration";
+const static std::string kGreenStepDurationPath = "/sys/class/leds/led:rgb_green/step_duration";
+const static std::string kBlueStepDurationPath = "/sys/class/leds/led:rgb_blue/step_duration";
+const static std::string kRgbBlinkPath = "/sys/class/leds/rgb/start_blink";
+const static std::string kRgbSyncPath = "/sys/class/leds/rgb/sync_state";
 
 int main() {
     uint32_t lcdMaxBrightness = 255;
-    std::vector<std::ofstream> buttonBacklight;
 
     std::ofstream lcdBacklight(kLcdBacklightPath);
     if (!lcdBacklight) {
@@ -76,30 +67,6 @@ int main() {
         return -errno;
     } else {
         lcdMaxBacklight >> lcdMaxBrightness;
-    }
-
-    std::ofstream button1Backlight(kButton1BacklightPath);
-    if (button1Backlight) {
-        buttonBacklight.emplace_back(std::move(button1Backlight));
-    } else {
-        LOG(WARNING) << "Failed to open " << kButton1BacklightPath << ", error=" << errno
-                     << " (" << strerror(errno) << ")";
-    }
-
-    std::ofstream button2Backlight(kButton2BacklightPath);
-    if (button2Backlight) {
-        buttonBacklight.emplace_back(std::move(button2Backlight));
-    } else {
-        LOG(WARNING) << "Failed to open " << kButton2BacklightPath << ", error=" << errno
-                     << " (" << strerror(errno) << ")";
-    }
-
-    std::ofstream button3Backlight(kButton3BacklightPath);
-    if (button3Backlight) {
-        buttonBacklight.emplace_back(std::move(button3Backlight));
-    } else {
-        LOG(WARNING) << "Failed to open " << kButton3BacklightPath << ", error=" << errno
-                     << " (" << strerror(errno) << ")";
     }
 
     std::ofstream redLed(kRedLedPath);
@@ -123,44 +90,23 @@ int main() {
         return -errno;
     }
 
-    std::ofstream redDutyPcts(kRedDutyPctsPath);
-    if (!redDutyPcts) {
-        LOG(ERROR) << "Failed to open " << kRedDutyPctsPath << ", error=" << errno
+    std::ofstream redLutPwm(kRedLutPwmPath);
+    if (!redLutPwm) {
+        LOG(ERROR) << "Failed to open " << kRedLutPwmPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
 
-    std::ofstream greenDutyPcts(kGreenDutyPctsPath);
-    if (!greenDutyPcts) {
-        LOG(ERROR) << "Failed to open " << kGreenDutyPctsPath << ", error=" << errno
+    std::ofstream greenLutPwm(kGreenLutPwmPath);
+    if (!greenLutPwm) {
+        LOG(ERROR) << "Failed to open " << kGreenLutPwmPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
 
-    std::ofstream blueDutyPcts(kBlueDutyPctsPath);
-    if (!blueDutyPcts) {
-        LOG(ERROR) << "Failed to open " << kBlueDutyPctsPath << ", error=" << errno
-                   << " (" << strerror(errno) << ")";
-        return -errno;
-    }
-
-    std::ofstream redStartIdx(kRedStartIdxPath);
-    if (!redStartIdx) {
-        LOG(ERROR) << "Failed to open " << kRedStartIdxPath << ", error=" << errno
-                   << " (" << strerror(errno) << ")";
-        return -errno;
-    }
-
-    std::ofstream greenStartIdx(kGreenStartIdxPath);
-    if (!greenStartIdx) {
-        LOG(ERROR) << "Failed to open " << kGreenStartIdxPath << ", error=" << errno
-                   << " (" << strerror(errno) << ")";
-        return -errno;
-    }
-
-    std::ofstream blueStartIdx(kBlueStartIdxPath);
-    if (!blueStartIdx) {
-        LOG(ERROR) << "Failed to open " << kBlueStartIdxPath << ", error=" << errno
+    std::ofstream blueLutPwm(kBlueLutPwmPath);
+    if (!blueLutPwm) {
+        LOG(ERROR) << "Failed to open " << kBlueLutPwmPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
@@ -207,44 +153,23 @@ int main() {
         return -errno;
     }
 
-    std::ofstream redRampStepMs(kRedRampStepMsPath);
-    if (!redRampStepMs) {
-        LOG(ERROR) << "Failed to open " << kRedRampStepMsPath << ", error=" << errno
+    std::ofstream redStepDuration(kRedStepDurationPath);
+    if (!redStepDuration) {
+        LOG(ERROR) << "Failed to open " << kRedStepDurationPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
 
-    std::ofstream greenRampStepMs(kGreenRampStepMsPath);
-    if (!greenRampStepMs) {
-        LOG(ERROR) << "Failed to open " << kGreenRampStepMsPath << ", error=" << errno
+    std::ofstream greenStepDuration(kGreenStepDurationPath);
+    if (!greenStepDuration) {
+        LOG(ERROR) << "Failed to open " << kGreenStepDurationPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
 
-    std::ofstream blueRampStepMs(kBlueRampStepMsPath);
-    if (!blueRampStepMs) {
-        LOG(ERROR) << "Failed to open " << kBlueRampStepMsPath << ", error=" << errno
-                   << " (" << strerror(errno) << ")";
-        return -errno;
-    }
-
-    std::ofstream redBlink(kRedBlinkPath);
-    if (!redBlink) {
-        LOG(ERROR) << "Failed to open " << kRedBlinkPath << ", error=" << errno
-                   << " (" << strerror(errno) << ")";
-        return -errno;
-    }
-
-    std::ofstream greenBlink(kGreenBlinkPath);
-    if (!greenBlink) {
-        LOG(ERROR) << "Failed to open " << kGreenBlinkPath << ", error=" << errno
-                   << " (" << strerror(errno) << ")";
-        return -errno;
-    }
-
-    std::ofstream blueBlink(kBlueBlinkPath);
-    if (!blueBlink) {
-        LOG(ERROR) << "Failed to open " << kBlueBlinkPath << ", error=" << errno
+    std::ofstream blueStepDuration(kBlueStepDurationPath);
+    if (!blueStepDuration) {
+        LOG(ERROR) << "Failed to open " << kBlueStepDurationPath << ", error=" << errno
                    << " (" << strerror(errno) << ")";
         return -errno;
     }
@@ -256,16 +181,21 @@ int main() {
         return -errno;
     }
 
+    std::ofstream rgbSync(kRgbSyncPath);
+    if (!rgbSync) {
+        LOG(ERROR) << "Failed to open " << kRgbSyncPath << ", error=" << errno
+                   << " (" << strerror(errno) << ")";
+        return -errno;
+    }
+
     android::sp<ILight> service = new Light(
-            {std::move(lcdBacklight), lcdMaxBrightness}, std::move(buttonBacklight),
+            {std::move(lcdBacklight), lcdMaxBrightness},
             std::move(redLed), std::move(greenLed), std::move(blueLed),
-            std::move(redDutyPcts), std::move(greenDutyPcts), std::move(blueDutyPcts),
-            std::move(redStartIdx), std::move(greenStartIdx), std::move(blueStartIdx),
+            std::move(redLutPwm), std::move(greenLutPwm), std::move(blueLutPwm),
             std::move(redPauseLo), std::move(greenPauseLo), std::move(bluePauseLo),
             std::move(redPauseHi), std::move(greenPauseHi), std::move(bluePauseHi),
-            std::move(redRampStepMs), std::move(greenRampStepMs), std::move(blueRampStepMs),
-            std::move(redBlink), std::move(greenBlink), std::move(blueBlink),
-            std::move(rgbBlink));
+            std::move(redStepDuration), std::move(greenStepDuration), std::move(blueStepDuration),
+            std::move(rgbBlink), std::move(rgbSync));
 
     configureRpcThreadpool(1, true);
 
