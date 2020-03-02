@@ -32,15 +32,12 @@ namespace implementation {
 
 struct Light : public ILight {
     Light(std::pair<std::ofstream, uint32_t>&& lcd_backlight,
-          std::vector<std::ofstream>&& button_backlight,
           std::ofstream&& red_led, std::ofstream&& green_led, std::ofstream&& blue_led,
-          std::ofstream&& red_duty_pcts, std::ofstream&& green_duty_pcts, std::ofstream&& blue_duty_pcts,
-          std::ofstream&& red_start_idx, std::ofstream&& green_start_idx, std::ofstream&& blue_start_idx,
+          std::ofstream&& red_lut_pwm, std::ofstream&& green_lut_pwm, std::ofstream&& blue_lut_pwm,
           std::ofstream&& red_pause_lo, std::ofstream&& green_pause_lo, std::ofstream&& blue_pause_lo,
           std::ofstream&& red_pause_hi, std::ofstream&& green_pause_hi, std::ofstream&& blue_pause_hi,
-          std::ofstream&& red_ramp_step_ms, std::ofstream&& green_ramp_step_ms, std::ofstream&& blue_ramp_step_ms,
-          std::ofstream&& red_blink, std::ofstream&& green_blink, std::ofstream&& blue_blink,
-          std::ofstream&& rgb_blink);
+          std::ofstream&& red_step_duration, std::ofstream&& green_step_duration, std::ofstream&& blue_step_duration,
+          std::ofstream&& rgb_blink, std::ofstream&& rgb_sync);
 
     // Methods from ::android::hardware::light::V2_0::ILight follow.
     Return<Status> setLight(Type type, const LightState& state) override;
@@ -49,36 +46,29 @@ struct Light : public ILight {
   private:
     void setAttentionLight(const LightState& state);
     void setBatteryLight(const LightState& state);
-    void setButtonsBacklight(const LightState& state);
     void setLcdBacklight(const LightState& state);
     void setNotificationLight(const LightState& state);
     void setSpeakerBatteryLightLocked();
     void setSpeakerLightLocked(const LightState& state);
 
     std::pair<std::ofstream, uint32_t> mLcdBacklight;
-    std::vector<std::ofstream> mButtonBacklight;
     std::ofstream mRedLed;
     std::ofstream mGreenLed;
     std::ofstream mBlueLed;
-    std::ofstream mRedDutyPcts;
-    std::ofstream mGreenDutyPcts;
-    std::ofstream mBlueDutyPcts;
-    std::ofstream mRedStartIdx;
-    std::ofstream mGreenStartIdx;
-    std::ofstream mBlueStartIdx;
+    std::ofstream mRedLutPwm;
+    std::ofstream mGreenLutPwm;
+    std::ofstream mBlueLutPwm;
     std::ofstream mRedPauseLo;
     std::ofstream mGreenPauseLo;
     std::ofstream mBluePauseLo;
     std::ofstream mRedPauseHi;
     std::ofstream mGreenPauseHi;
     std::ofstream mBluePauseHi;
-    std::ofstream mRedRampStepMs;
-    std::ofstream mGreenRampStepMs;
-    std::ofstream mBlueRampStepMs;
-    std::ofstream mRedBlink;
-    std::ofstream mGreenBlink;
-    std::ofstream mBlueBlink;
+    std::ofstream mRedStepDuration;
+    std::ofstream mGreenStepDuration;
+    std::ofstream mBlueStepDuration;
     std::ofstream mRgbBlink;
+    std::ofstream mRgbSync;
 
     LightState mAttentionState;
     LightState mBatteryState;
