@@ -5,6 +5,8 @@ binder_call(rild, hal_idd_default)
 
 # Allow rild to find hal_idd_hwservice
 allow rild hal_idd_hwservice:hwservice_manager find;
+# Allow rild to access tad
+unix_socket_connect(rild, tad, tad)
 
 # Allow rild to add somc_hw_radio_hwservice
 allow rild somc_hw_radio_hwservice:hwservice_manager add;
@@ -18,3 +20,6 @@ allow rild radio_data_file:file create_file_perms;
 
 # Allow rild to read files in /persist
 r_dir_file(rild, persist_file)
+
+# Allow rild to communicate with qtidataservices_app
+allow rild qtidataservices_app:binder call;
