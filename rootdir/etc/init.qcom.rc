@@ -492,12 +492,6 @@ on property:init.svc.per_mgr=running
 on property:sys.shutdown.requested=*
     stop per_proxy
 
-service readfem /vendor/bin/readfem
-    class main
-    user root
-    group root oem_2901
-    oneshot
-
 service readmac /vendor/bin/readmac
     class main
     user root
