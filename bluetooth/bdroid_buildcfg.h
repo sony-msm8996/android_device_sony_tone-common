@@ -30,16 +30,12 @@ static inline const char* BtmGetDefaultName()
     char product_device[PROPERTY_VALUE_MAX];
     property_get("ro.product.device", product_device, "");
 
-    if (strstr(product_device, "capricorn"))
-        return "Xiaomi MI 5s";
-    if (strstr(product_device, "gemini"))
-        return "Xiaomi MI 5";
-    if (strstr(product_device, "lithium"))
-        return "Xiaomi MI MIX";
-    if (strstr(product_device, "natrium"))
-        return "Xiaomi MI 5s Plus";
-    if (strstr(product_device, "scorpio"))
-        return "Xiaomi MI Note 2";
+    if (strstr(product_device, "dora"))
+        return "Sony Xperia X Performance";
+    if (strstr(product_device, "kagura"))
+        return "Sony Xperia XZ";
+    if (strstr(product_device, "keyaki"))
+        return "Sony Xperia XZs";
 
     // Fallback to ro.product.model
     return "";
