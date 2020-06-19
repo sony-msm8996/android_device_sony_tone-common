@@ -585,3 +585,10 @@ service mlog_qmi_service /vendor/bin/mlog_qmi_service
     user root
     group system wakelock drmrpc
     writepid /dev/cpuset/system-background/tasks
+
+# TA import service
+service taimport /vendor/bin/taimport
+    class late_start
+    user root
+    group system drmrpc
+    oneshot
