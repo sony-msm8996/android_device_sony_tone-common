@@ -210,6 +210,10 @@ on post-fs-data
     mkdir /rca/plugins 0750 oem_2987 oem_2987
     restorecon_recursive /rca
 
+    # Sony security daemon
+    mkdir /persist/pc/ 0770 radio system
+    mkdir /data/credmgr 0770 system oem_2996
+
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -637,3 +641,16 @@ service vendor.semc.system.idd.fallback-1-0 /vendor/bin/hw/vendor.semc.system.id
     user oem_2987
     group oem_2987 log inet oem_2993
     writepid /dev/cpuset/system-background/tasks
+
+# Sony security daemon
+service secd /vendor/bin/secd
+    class main
+    user system
+    group system
+    socket secd_devsec_sock stream 0660 system oem_2996
+    socket secd_credmgr_sock stream 0660 system oem_2996
+
+service vendor.semc.hardware.secd-1-0 /vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
+    class hal
+    user system
+    group system
