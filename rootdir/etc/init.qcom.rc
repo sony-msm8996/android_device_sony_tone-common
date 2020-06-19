@@ -572,3 +572,9 @@ service ta_qmi_service /vendor/bin/ta_qmi_service
     user root
     group wakelock
     writepid /dev/cpuset/system-background/tasks
+
+# Secure config transfer service
+service sct_service /vendor/bin/sct_service
+    class main
+    user root drmrpc
+    writepid /dev/cpuset/system-background/tasks
