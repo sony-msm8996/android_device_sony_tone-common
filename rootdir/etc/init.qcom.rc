@@ -578,3 +578,10 @@ service sct_service /vendor/bin/sct_service
     class main
     user root drmrpc
     writepid /dev/cpuset/system-background/tasks
+
+# Modem log probe service
+service mlog_qmi_service /vendor/bin/mlog_qmi_service
+    class main
+    user root
+    group system wakelock drmrpc
+    writepid /dev/cpuset/system-background/tasks
