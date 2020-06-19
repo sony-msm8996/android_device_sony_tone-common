@@ -269,3 +269,6 @@
 
 # Kmsg device
 /dev/kmsg                 0620   root       system
+
+# TA
+/dev/block/bootdevice/by-name/TA 0770   oem_2997     oem_2997

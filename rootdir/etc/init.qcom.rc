@@ -62,6 +62,11 @@ on fs
 
     mount_all /vendor/etc/fstab.qcom
 
+    # Sony trim area damon
+    wait /dev/block/mmcblk0p1
+    chown oem_2997 oem_2997 /dev/block/mmcblk0p1
+    chmod 0770 /dev/block/mmcblk0p1
+
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
@@ -552,3 +557,11 @@ on property:init.svc.surfaceflinger=restarting
 
 on property:slpi.restart=1
     write /sys/kernel/debug/msm_subsys/slpi restart
+
+# TA daemon
+service tad_static /vendor/bin/tad_static /dev/block/bootdevice/by-name/TA 0,16
+    class core
+    user oem_2997
+    group oem_2997 root
+    socket tad stream 0660 system oem_2993
+    writepid /dev/cpuset/system-background/tasks
