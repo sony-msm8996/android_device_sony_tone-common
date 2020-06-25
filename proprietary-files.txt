@@ -597,8 +597,11 @@ vendor/lib/hw/keystore.msm8996.so
 vendor/lib64/liblights-core.so
 vendor/lib/liblights-core.so
 
-# Listen
-vendor/lib/libadpcmdec.so
+# Listen - from gemini - OPR1.170623.032
+vendor/lib64/hw/sound_trigger.primary.msm8996.so|0e0c51d1a031faf743a2228c312badfbb54e63e7
+vendor/lib/hw/sound_trigger.primary.msm8996.so|cc344b490c39312a7a0285ec41564211daee8052
+vendor/lib/libadpcmdec.so|8e9444ceea8dc5da96145489153d7147717c8323
+vendor/lib/libsmwrapper.so|5d861723fe431a39fb51d1ff41e47c731aa78f20
 
 # Machine learning
 -vendor/etc/lm/ReferenceFeature.xml
