@@ -67,6 +67,16 @@ on fs
     chown oem_2997 oem_2997 /dev/block/mmcblk0p1
     chmod 0770 /dev/block/mmcblk0p1
 
+    # Configure idd/rca directories
+    chown oem_2987 oem_2987 /idd
+    chmod 0751 /idd
+    exec /vendor/bin/rm -r /idd/lost+found
+    symlink /idd /mnt/idd
+    chown oem_2987 oem_2987 /rca
+    chmod 0750 /rca
+    exec /vendor/bin/rm -r /rca/lost+found
+    symlink /rca /mnt/rca
+
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
@@ -190,6 +200,15 @@ on post-fs-data
 
     # Fingerprint data folder
     mkdir /data/fpc 0770 system system
+
+    # IDD setup
+    mkdir /idd/lost+found 0770 root root
+    mkdir /idd/output 0755 oem_2987 oem_2987
+    mkdir /idd/socket 0711 oem_2987 oem_2987
+    mkdir /idd/startup-prober 0700 root root
+    restorecon_recursive /idd
+    mkdir /rca/plugins 0750 oem_2987 oem_2987
+    restorecon_recursive /rca
 
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
@@ -599,3 +618,22 @@ service updatemiscta /vendor/bin/updatemiscta
     user oem_2991
     group oem_2993
     oneshot
+
+# Sony IDD services
+service iddd /vendor/bin/iddd
+    class core
+    user oem_2987
+    group oem_2987 log inet oem_2993
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.semc.system.idd-1-0 /vendor/bin/hw/vendor.semc.system.idd@1.0-service
+    class hal
+    user oem_2987
+    group oem_2987 log inet oem_2993
+    writepid /dev/cpuset/system-background/tasks
+
+service vendor.semc.system.idd.fallback-1-0 /vendor/bin/hw/vendor.semc.system.idd.fallback@1.0-service
+    class hal
+    user oem_2987
+    group oem_2987 log inet oem_2993
+    writepid /dev/cpuset/system-background/tasks
