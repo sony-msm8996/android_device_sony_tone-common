@@ -249,9 +249,13 @@
 # Ramdump devices
 /dev/ramdump*             0640   system     system
 
-# Fingerprint device
-/dev/qbt1000              0660   system     system
-/dev/fpc1020              0666   system     system
+# Fingerprint sensor device
+/sys/devices/soc/soc:fpc1145 hw_reset         0220 system input
+/sys/devices/soc/soc:fpc1145 pinctl_set       0220 system input
+/sys/devices/soc/soc:fpc1145 regulator_enable 0220 system input
+/sys/devices/soc/soc:fpc1145 spi_prepare      0220 system input
+/sys/devices/soc/soc:fpc1145 irq              0660 system input
+/sys/devices/soc/soc:fpc1145 wakeup_enable    0220 system input
 
 # Capacitive touch emulation device
 /dev/captouch             0666   system     system
@@ -272,3 +276,10 @@
 
 # TA
 /dev/block/bootdevice/by-name/TA 0770   oem_2997     oem_2997
+
+# NFC
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  init_deinit 0200    nfc     nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  set_pwr     0200    nfc     nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  res_ready   0400    nfc     nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  recv_rsp    0600    nfc     nfc
+/sys/devices/soc/75b6000.i2c/i2c-8/8-0028  send_cmd    0200    nfc     nfc
