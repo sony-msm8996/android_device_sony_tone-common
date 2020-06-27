@@ -56,6 +56,10 @@ on init
 
     write /sys/module/qpnp_rtc/parameters/poweron_alarm 1
 
+    write /sys/devices/soc/74a4900.sdhci/mmc_host/mmc1/clkgate_delay 1
+    # Avoid long waits for rcu grace periods
+    write /sys/kernel/rcu_expedited 1
+
 on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
@@ -76,6 +80,9 @@ on fs
     chmod 0750 /rca
     exec /vendor/bin/rm -r /rca/lost+found
     symlink /rca /mnt/rca
+
+    # start clearpad_post_probe when filesystem is available for fwflash
+    write /sys/devices/virtual/input/clearpad/post_probe_start 1
 
 on late-fs
     # boot time fs tune
@@ -214,6 +221,12 @@ on post-fs-data
     mkdir /persist/pc/ 0770 radio system
     mkdir /data/credmgr 0770 system oem_2996
 
+    # Sony camera module
+    chown cameraserver camera /sys/devices/sony_camera_0/info
+    chmod 0770 /sys/devices/sony_camera_0/info
+    chown cameraserver camera /sys/devices/sony_camera_1/info
+    chmod 0770 /sys/devices/sony_camera_1/info
+
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
@@ -230,6 +243,12 @@ on early-boot
     write /sys/bus/msm_subsys/devices/subsys3/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys4/restart_level "related"
     write /sys/bus/msm_subsys/devices/subsys5/restart_level "related"
+
+    # SONY: for Bluesleep
+    chown bluetooth net_bt /proc/bluetooth/sleep/lpm
+    chown bluetooth net_bt /proc/bluetooth/sleep/btwrite
+    chmod 0660 /proc/bluetooth/sleep/lpm
+    chmod 0660 /proc/bluetooth/sleep/btwrite
 
 on boot
     # Access permission for Bluetooth
@@ -293,6 +312,14 @@ on boot
     mkdir /dev/socket/netmgr 0750 radio radio
 
     # LED torch permissions
+    chown cameraserver system /sys/class/leds/led:flash_0/brightness
+    chown cameraserver system /sys/class/leds/led:flash_1/brightness
+    chown cameraserver system /sys/class/leds/led:torch_0/brightness
+    chown cameraserver system /sys/class/leds/led:torch_1/brightness
+    chown cameraserver system /sys/class/leds/led:switch/brightness
+    chown cameraserver system /sys/class/leds/led:switch/strobe
+    chown cameraserver system /sys/class/leds/led:switch/duration
+    chown cameraserver system /sys/class/leds/led:switch/fault_status
     chmod 0666 /sys/class/leds/led:torch_0/brightness
     chmod 0666 /sys/class/leds/led:torch_1/brightness
     chmod 0666 /sys/class/leds/led:switch/brightness
@@ -330,6 +357,56 @@ on boot
 
     # Wifi firmware reload path
     chown wifi wifi /sys/module/wlan/parameters/fwpath
+
+    # for USB HOST
+    chown system system /sys/module/qpnp_smbcharger/parameters/id_polling_timeout
+    chown system system /sys/module/qpnp_smbcharger/parameters/start_id_polling
+    chown system system /sys/module/qpnp_smbcharger/parameters/id_polling_enabled
+    chmod 0660 /sys/module/qpnp_smbcharger/parameters/id_polling_timeout
+    chmod 0660 /sys/module/qpnp_smbcharger/parameters/start_id_polling
+    chmod 0660 /sys/module/qpnp_smbcharger/parameters/id_polling_enabled
+
+    write /sys/module/qpnp_smbcharger/parameters/id_polling_timeout 30000
+    write /sys/module/qpnp_smbcharger/parameters/start_id_polling 1
+
+    # ToF sensor
+    chown cameraserver camera /dev/i2c-3
+    chmod 666 /dev/i2c-3
+    chown cameraserver camera /sys/devices/virtual/input/tof_sensor/tof_power_ctl
+    chmod 666 /sys/devices/virtual/input/tof_sensor/tof_power_ctl
+
+    # RGBC-IR sensor
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_Itime
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_all
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_auto_gain
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_blue
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_channel
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_clear
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_gain
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_green
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_persist
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_power_state
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_red
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_thres
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/als_thresh_deltaP
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/chip_id
+    chown cameraserver camera /sys/devices/virtual/input/rgbcir_sensor/chip_pow
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_Itime
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_auto_gain
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_channel
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_gain
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_persist
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_power_state
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_thres
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/als_thresh_deltaP
+    chmod 666 /sys/devices/virtual/input/rgbcir_sensor/chip_pow
+
+    # Cover mode
+    chown system system /sys/devices/virtual/input/clearpad/cover_mode_enabled
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_bottom
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_left
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_right
+    chown system system /sys/devices/virtual/input/clearpad/cover_win_top
 
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
