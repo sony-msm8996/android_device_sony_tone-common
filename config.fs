@@ -1,35 +1,50 @@
 [AID_QTI_DIAG]
-value:2901
+value: 2901
 
 [AID_RFS]
-value:2903
+value: 2951
 
 [AID_RFS_SHARED]
-value:2904
+value: 2952
 
 [AID_IDD]
-value:2987
+value: 2987
 
 [AID_UPDATEMISCTA]
-value:2991
+value: 2991
 
 [AID_TRIMAREA]
-value:2993
+value: 2993
+
+[AID_PERSIST_RW]
+value: 2995
 
 [AID_CREDMGR_CLI]
-value:2996
+value: 2996
 
 [AID_TAD]
-value:2997
+value: 2997
 
 [AID_TA_QMI]
-value:2998
+value: 2998
 
 [vendor/bin/wcnss_filter]
 mode: 0755
 user: AID_BLUETOOTH
 group: AID_BLUETOOTH
 caps: BLOCK_SUSPEND
+
+[system/vendor/bin/hw/android.hardware.wifi@1.0-service]
+mode: 0755
+user: AID_WIFI
+group: AID_WIFI
+caps: NET_ADMIN NET_RAW SYS_MODULE
+
+[vendor/bin/hw/android.hardware.wifi@1.0-service]
+mode: 0755
+user: AID_WIFI
+group: AID_WIFI
+caps: NET_ADMIN NET_RAW SYS_MODULE
 
 [vendor/bin/hw/android.hardware.bluetooth@1.0-service-qti]
 mode: 0755

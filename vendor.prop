@@ -1,54 +1,95 @@
 # Adreno
 ro.qcom.adreno.qgl.ShaderStorageImageExtendedFormats=0
 
+# aDSP sensors
+## max rate
+ro.qti.sensors.max_accel_rate=false
+ro.qti.sensors.max_gyro_rate=false
+ro.qti.sensors.max_mag_rate=false
+ro.qti.sensors.max_geomag_rotv=50
+
+## sensor type
+ro.qti.sdk.sensors.gestures=false
+ro.qti.sensors.pedometer=false
+ro.qti.sensors.step_detector=true
+ro.qti.sensors.step_counter=true
+ro.qti.sensors.pam=false
+ro.qti.sensors.scrn_ortn=false
+ro.qti.sensors.smd=true
+ro.qti.sensors.game_rv=true
+ro.qti.sensors.georv=true
+ro.qti.sensors.cmc=false
+ro.qti.sensors.bte=false
+ro.qti.sensors.fns=false
+ro.qti.sensors.qmd=false
+ro.qti.sensors.amd=false
+ro.qti.sensors.rmd=false
+ro.qti.sensors.vmd=false
+ro.qti.sensors.gtap=false
+ro.qti.sensors.tap=false
+ro.qti.sensors.facing=false
+ro.qti.sensors.tilt=false
+ro.qti.sensors.tilt_detector=true
+ro.qti.sensors.dpc=false
+ro.qti.sensors.qheart=false
+ro.qti.sensors.wu=true
+ro.qti.sensors.proximity=true
+ro.qti.sensors.gravity=true
+ro.qti.sensors.laccel=true
+ro.qti.sensors.orientation=true
+ro.qti.sensors.rotvec=true
+ro.qti.sensors.fast_amd=false
+ro.qti.sensors.wrist_tilt=false
+ro.qti.sensors.pug=false
+ro.qti.sensors.iod=false
+ro.qti.sensors.dev_ori=false
+ro.qti.sensors.pmd=false
+ro.qti.sensors.sta_detect=false
+ro.qti.sensors.mot_detect=false
+ro.qti.sensors.als_scale=1
+ro.qfusion_use_report_period=false
+
 # Audio
-af.fast_track_multiplier=1
-audio.deep_buffer.media=true
-audio.offload.min.duration.secs=15
-audio.offload.video=true
-persist.vendor.audio.fluence.speaker=true
-persist.vendor.audio.fluence.voicecall=true
-persist.vendor.audio.fluence.voicerec=false
-persist.vendor.bt.enable.splita2dp=false
-ro.config.media_vol_steps=25
+persist.audio.fluence.voicecall=true
+persist.audio.fluence.voicecomm=true
+persist.audio.fluence.voicerec=false
+persist.audio.fluence.speaker=true
+media.aac_51_output_enabled=true
+audio.deep_buffer.media=1
+fmas.hdph_sgain=0
 ro.config.vc_call_vol_steps=7
-ro.vendor.audio.sdk.fluencetype=fluence
-ro.vendor.audio.sdk.ssr=false
-vendor.audio.dolby.ds2.enabled=false
-vendor.audio.dolby.ds2.hardbypass=false
-vendor.audio_hal.period_size=192
-vendor.audio.hw.aac.encoder=true
-vendor.audio.offload.buffer.size.kb=64
-vendor.audio.offload.gapless.enabled=true
-vendor.audio.offload.multiaac.enable=true
-vendor.audio.offload.multiple.enabled=false
-vendor.audio.offload.passthrough=false
-vendor.audio.offload.track.enable=true
-vendor.audio.parser.ip.buffer.size=262144
-vendor.audio.safx.pbe.enabled=true
-vendor.audio.tunnel.encode=false
-vendor.voice.path.for.pcm.voip=true
+ro.config.media_vol_steps=25
 
 # Bluetooth
-bt.max.hfpclient.connections=1
-qcom.bluetooth.soc=rome
-ro.bluetooth.dun=true
+bluetooth.hfp.client=1
+persist.bluetooth.avrcpversion=avrcp16
 ro.bluetooth.hfp.ver=1.7
-ro.bluetooth.sap=true
-ro.btconfig.if=uart
-ro.btconfig.vendor=qcom
-ro.btconfig.chip=QCA6164
-ro.btconfig.dev=/dev/ttyHS0
+ro.bt.bdaddr_path=/data/etc/bluetooth_bdaddr
+persist.vendor.bt.enable.splita2dp=false
+
+# Backlight
+sys.backlight_on=1
 
 # Camera
+camera.disable_zsl_mode=1
+camera.display.lmax=1280x720
+camera.display.umax=1920x1080
+media.camera.ts.monotonic=1
 persist.camera.gyro.disable=0
-persist.camera.imglib.fddsp=1
 
 # CNE
 persist.cne.feature=1
 
+# Debug switch
+persist.debug.coresight.config=none
+
+# DRM
+drm.service.enabled=true
+
+# DPM
+persist.vendor.dpm.feature=1
+
 # Data modules
-persist.data.iwlan.enable=true
 persist.data.mode=concurrent
 persist.data.netmgrd.qos.enable=true
 ro.use_data_netmgrd=true
@@ -56,14 +97,14 @@ ro.use_data_netmgrd=true
 # Display (Qualcomm AD)
 ro.qualcomm.cabl=0
 ro.qcom.ad=1
-ro.qcom.ad.calib.data=/system/etc/calib.cfg
+ro.qcom.ad.calib.data=/vendor/etc/ad_calib.cfg
 ro.qcom.ad.sensortype=2
-
-# DRM
-drm.service.enabled=true
 
 # FRP
 ro.frp.pst=/dev/block/bootdevice/by-name/frp
+
+# Fingerprint
+persist.qfp=false
 
 # Graphics
 debug.egl.hw=1
@@ -80,6 +121,19 @@ sdm.debug.disable_rotator_split=1
 sdm.debug.disable_skip_validate=1
 sdm.perf_hint_window=50
 
+# Hardware User Interface parameters
+ro.hwui.texture_cache_size=48
+ro.hwui.layer_cache_size=32
+ro.hwui.r_buffer_cache_size=4
+ro.hwui.path_cache_size=24
+ro.hwui.gradient_cache_size=1
+ro.hwui.drop_shadow_cache_size=5
+ro.hwui.texture_cache_flushrate=0.5
+ro.hwui.text_small_cache_width=1024
+ro.hwui.text_small_cache_height=1024
+ro.hwui.text_large_cache_width=2048
+ro.hwui.text_large_cache_height=1024
+
 # IMS
 persist.dbg.volte_avail_ovr=1
 persist.dbg.vt_avail_ovr=1
@@ -90,31 +144,29 @@ vidc.enc.dcvs.extra-buff-count=2
 
 # NFC
 ro.nfc.port=I2C
-persist.nfc.smartcard.config=SIM1,SIM2,eSE1
+
+# OpenGLES version
+ro.opengles.version=196610
 
 # Perf
 ro.vendor.extension_library=libqti-perfd-client.so
 ro.vendor.qti.sys.fw.bg_apps_limit=60
+ro.am.reschedule_service=true
 
 # Priv-app permissions whitelist
-ro.control_privapp_permissions=enforce
+ro.control_privapp_permissions=log
 
 # Radio
 DEVICE_PROVISIONED=1
 rild.libpath=/vendor/lib64/libril-qc-qmi-1.so
 ril.subscription.types=NV,RUIM
 ro.telephony.call_ring.multiple=false
-ro.telephony.default_cdma_sub=0
-ro.telephony.default_network=20,20
-persist.data.qmi.adb_logmask=0
-persist.net.doxlat=true
+persist.net.doxlat=false
 persist.radio.apm_sim_not_pwdn=1
-persist.radio.force_on_dc=true
-persist.radio.multisim.config=dsds
-persist.radio.redir_party_num=1
 persist.vendor.radio.custom_ecc=1
 persist.vendor.radio.rat_on=combine
 persist.vendor.radio.sib16_support=1
+telephony.lteOnCdmaDevice=0
 
 # RmNet Data
 persist.rmnet.data.enable=true
@@ -127,22 +179,25 @@ persist.data.df.mux_count=8
 persist.data.df.iwlan_mux=9
 persist.data.df.dev_name=rmnet_usb0
 
-# Security patch level
-ro.vendor.build.security_patch=2019-05-01
-
-# SEMC props
-ro.semc.version.fs=GENERIC
-ro.semc.version.fs_revision=41.3.A.2.247
-ro.semc.version.sw=1306-8087
-ro.semc.version.sw_revision=41.3.A.2.247
+# SEMC Settings
+# /system/etc/prop.default
+ro.semc.version.sw=1304-1564
+ro.semc.version.cust=1304-1564
+ro.semc.version.sw_revision=41.3.A.2.149
+ro.semc.version.fs_revision=41.3.A.2.149
+ro.semc.version.sw_variant=R1E
+ro.semc.version.cust_revision=R1E
 ro.semc.version.sw_type=user
-ro.semc.version.sw_variant=GLOBALDS-LTE3D
+ro.semc.product.model=F8131
+ro.semc.version.fs=GENERIC
 
 # TimeService
 persist.timed.enable=true
 
 # USB
 sys.usb.controller=6a00000.dwc3
+sys.usb.rndis.func.name=rndis_bam
 
 # Wifi
 wifi.interface=wlan0
+ro.wifi.addr_path=/sys/devices/platform/soc/soc:bcmdhd_wlan/macaddr

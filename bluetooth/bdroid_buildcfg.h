@@ -1,10 +1,5 @@
 /*
- *
- *  Copyright (c) 2013, The Linux Foundation. All rights reserved.
- *  Not a Contribution, Apache license notifications and license are retained
- *  for attribution purposes only.
- *
- * Copyright (C) 2012 The Android Open Source Project
+ * Copyright (C) 2014 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -22,29 +17,35 @@
 #ifndef _BDROID_BUILDCFG_H
 #define _BDROID_BUILDCFG_H
 
+#if !defined(OS_GENERIC)
 #include <cutils/properties.h>
 #include <string.h>
 
-static inline const char* BtmGetDefaultName()
+static inline const char* getBTDefaultName()
 {
-    char product_device[PROPERTY_VALUE_MAX];
-    property_get("ro.product.device", product_device, "");
+    char device[PROPERTY_VALUE_MAX];
+    property_get("ro.product.device", device, "");
 
-    if (strstr(product_device, "dora"))
-        return "Sony Xperia X Performance";
-    if (strstr(product_device, "kagura"))
-        return "Sony Xperia XZ";
-    if (strstr(product_device, "keyaki"))
-        return "Sony Xperia XZs";
+    if (!strcmp("dora", device)) {
+        return "Xperia X Performance";
+    }
 
-    // Fallback to ro.product.model
-    return "";
+    if (!strcmp("kagura", device)) {
+        return "Xperia XZ";
+    }
+
+    if (!strcmp("keyaki", device)) {
+        return "Xperia XZs";
+    }
+
+    return "Xperia";
 }
 
-#define BTM_DEF_LOCAL_NAME BtmGetDefaultName()
-#define BLUETOOTH_QTI_SW TRUE
-#define MAX_ACL_CONNECTIONS   16
-#define MAX_L2CAP_CHANNELS    16
-#define BLE_VND_INCLUDED   TRUE
-#define BT_CLEAN_TURN_ON_DISABLED 1
+#define BTM_DEF_LOCAL_NAME getBTDefaultName()
+#endif // OS_GENERIC
+
+#define BTM_WBS_INCLUDED TRUE
+#define BTIF_HF_WBS_PREFERRED TRUE
+#define BLE_VND_INCLUDED TRUE
+
 #endif

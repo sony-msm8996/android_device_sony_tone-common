@@ -1,0 +1,2 @@
+on init
+     write /sys/devices/soc/74a4900.sdhci/mmc_host/mmc1/clkgate_delay 1

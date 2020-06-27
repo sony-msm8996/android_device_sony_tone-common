@@ -64,4 +64,14 @@ if [ -s "$MY_DIR"/../$DEVICE/proprietary-files.txt ]; then
     extract "$MY_DIR"/../$DEVICE/proprietary-files.txt "$SRC" "$SECTION"
 fi
 
+function fix_vendor () {
+    sed -i \
+        "s/\/system\/$1\//\/vendor\/$1\//g" \
+        "$LINEAGE_ROOT"/vendor/"$VENDOR"/"$DEVICE_COMMON"/proprietary/vendor/"$2"
+}
+
+# Camera
+fix_vendor etc lib/libmmcamera_imglib.so
+fix_vendor etc lib/libmmcamera_interface.so
+
 "$MY_DIR"/setup-makefiles.sh
