@@ -199,7 +199,9 @@ include device/qcom/sepolicy-legacy-um/sepolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 TARGET_LD_SHIM_LIBS := \
-/vendor/lib/hw/camera.qcom.so|libcamera_tone.so
+/vendor/lib/hw/camera.qcom.so|libcamera_tone.so \
+/vendor/lib/libexcal_pal.so|libutilscallstack.so \
+/vendor/lib64/libexcal_pal.so|libutilscallstack.so
 
 # Vendor init
 TARGET_INIT_VENDOR_LIB := //$(VENDOR_PATH):libinit.sony_tone
