@@ -444,6 +444,10 @@ vendor/lib64/libxtadapter.so|9a8fbd106994aaaf380be883fa2ef37d04e20401
 vendor/lib64/libxtwifi_ulp_adaptor.so|078124cc018badf89c1f5588e9102e9f7c034da2
 vendor/lib64/vendor.qti.gnss@1.0_vendor.so|249c76153f8de014bf2dd2ab623ee3d87741fbc8
 
+# Graphics
+vendor/lib/lib-sec-disp.so
+vendor/lib64/lib-sec-disp.so
+
 # Graphics - from bardock-pro - OPM1.171019.019
 vendor/lib64/egl/eglSubDriverAndroid.so|7a51837cf3df8e18d3b305e2f0e7c5981dd39bf3
 vendor/lib64/egl/libEGL_adreno.so|c5034ce4a3b9be40bf220bc4218e74a1699b9747
