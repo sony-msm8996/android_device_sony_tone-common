@@ -574,6 +574,8 @@ service qcamerasvr /vendor/bin/mm-qcamera-daemon
     user camera
     group camera system inet input graphics
     writepid /dev/cpuset/system-background/tasks
+    socket cammw_tintless stream 0660 camera camera
+
 
 # Start up peripheral manager
 service per_mgr /vendor/bin/pm-service
