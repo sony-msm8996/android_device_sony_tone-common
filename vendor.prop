@@ -30,15 +30,10 @@ vendor.audio.tunnel.encode=false
 vendor.voice.path.for.pcm.voip=true
 
 # Bluetooth
-bt.max.hfpclient.connections=1
-qcom.bluetooth.soc=rome
-ro.bluetooth.dun=true
+bluetooth.hfp.client=1
+persist.bluetooth.avrcpversion=avrcp16
 ro.bluetooth.hfp.ver=1.7
-ro.bluetooth.sap=true
-ro.btconfig.if=uart
-ro.btconfig.vendor=qcom
-ro.btconfig.chip=QCA6164
-ro.btconfig.dev=/dev/ttyHS0
+persist.vendor.bt.enable.splita2dp=false
 
 # Camera
 persist.camera.gyro.disable=0

@@ -86,9 +86,9 @@ USE_XML_AUDIO_POLICY_CONF := 1
 
 # Bluetooth
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := $(VENDOR_PATH)/bluetooth
-BOARD_HAS_QCA_BT_ROME := true
-BOARD_HAVE_BLUETOOTH_QCOM := true
-QCOM_BT_USE_BTNV := true
+BOARD_CUSTOM_BT_CONFIG := $(VENDOR_PATH)/bluetooth/vnd_generic.txt
+BOARD_HAVE_BLUETOOTH := true
+BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
@@ -187,16 +187,19 @@ BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 TARGET_INIT_VENDOR_LIB := libinit_msm8996
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8996
 
-# Wifi
+# WiFi
+WIFI_BUS := PCIE
+
+# Wi-Fi definitions for Broadcom solution
 BOARD_WLAN_DEVICE           := bcmdhd
 BOARD_WPA_SUPPLICANT_DRIVER := NL80211
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
+WPA_SUPPLICANT_VERSION      := VER_0_8_X
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
 BOARD_HOSTAPD_DRIVER        := NL80211
 BOARD_HOSTAPD_PRIVATE_LIB   := lib_driver_cmd_$(BOARD_WLAN_DEVICE)
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_AP      := "/vendor/etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin"
-WIFI_DRIVER_FW_PATH_STA     := "/vendor/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin"
-WPA_SUPPLICANT_VERSION      := VER_0_8_X
+WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/wlan/fw_bcmdhd_apsta.bin"
+WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/wlan/fw_bcmdhd.bin"
 
 # Inherit from the proprietary version
 -include vendor/sony/tone-common/BoardConfigVendor.mk

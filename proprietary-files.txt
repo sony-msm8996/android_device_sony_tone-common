@@ -918,9 +918,9 @@ vendor/lib/libwvhidl.so|f7288f7a7ed6765bd1d80d639a0aeb0c31eda795
 vendor/bin/cnss-daemon
 
 # WiFi firmware
-etc/firmware/wlan/bcmdhd/bcmdhd.cal:vendor/etc/firmware/wlan/bcmdhd/bcmdhd.cal
-etc/firmware/wlan/bcmdhd/bcmdhd.cal_b1:vendor/etc/firmware/wlan/bcmdhd/bcmdhd.cal_b1
-etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin:vendor/etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin
-etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin_b1:vendor/etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin_b1
-etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin:vendor/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin
-etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin_b1:vendor/etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin_b1
+etc/firmware/wlan/bcmdhd/bcmdhd.cal:vendor/firmware/wlan/bcmdhd.cal
+etc/firmware/wlan/bcmdhd/bcmdhd.cal_b1:vendor/firmware/wlan/bcmdhd.cal_b1
+etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin:vendor/firmware/wlan/fw_bcmdhd_apsta.bin
+etc/firmware/wlan/bcmdhd/fw_bcmdhd_apsta.bin_b1:vendor/firmware/wlan/fw_bcmdhd_apsta.bin_b1
+etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin:vendor/firmware/wlan/fw_bcmdhd.bin
+etc/firmware/wlan/bcmdhd/fw_bcmdhd.bin_b1:vendor/firmware/wlan/fw_bcmdhd.bin_b1
