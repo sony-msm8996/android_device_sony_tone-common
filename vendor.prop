@@ -41,8 +41,7 @@ ro.btconfig.chip=QCA6164
 ro.btconfig.dev=/dev/ttyHS0
 
 # Camera
-persist.camera.gyro.disable=0
-persist.camera.imglib.fddsp=1
+camera.disable_zsl_mode=1
 
 # CNE
 persist.cne.feature=1
