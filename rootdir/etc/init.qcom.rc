@@ -695,6 +695,12 @@ service taimport /vendor/bin/taimport
     group system drmrpc
     oneshot
 
+# Misc TA service
+service vendor.somc.hardware.miscta-1-0 /vendor/bin/hw/vendor.somc.hardware.miscta@1.0-service
+   class hal oem_2993
+   user system
+   group system
+
 # updatemiscta
 service updatemiscta /vendor/bin/updatemiscta
     class main

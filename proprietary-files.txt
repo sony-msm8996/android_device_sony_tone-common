@@ -829,7 +829,6 @@ lib64/libMiscTaWrapper.so
 lib64/vendor.somc.hardware.miscta@1.0.so
 vendor/bin/hw/vendor.somc.hardware.miscta@1.0-service
 vendor/bin/ta_qmi_service
-vendor/etc/init/vendor.somc.hardware.miscta@1.0-service.rc
 -vendor/lib/libmiscta.so
 vendor/lib/libta.so
 vendor/lib/libsmemlog.so
