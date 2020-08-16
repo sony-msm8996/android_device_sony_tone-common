@@ -408,6 +408,9 @@ on boot
     chown system system /sys/devices/virtual/input/clearpad/cover_win_right
     chown system system /sys/devices/virtual/input/clearpad/cover_win_top
 
+    # WiFi firmware path
+    chown wifi wifi /sys/module/bcmdhd/parameters/firmware_path
+
 on property:sys.boot_completed=1
     # Enable ZRAM on boot_complete
     swapon_all /vendor/etc/fstab.qcom
