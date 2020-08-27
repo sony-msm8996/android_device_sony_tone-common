@@ -560,6 +560,16 @@ on property:ro.data.large_tcp_window_size=true
     # Adjust socket buffer to enlarge TCP receive window for high bandwidth (e.g. DO-RevB)
     write /proc/sys/net/ipv4/tcp_adv_win_scale  2
 
+on property:persist.vendor.radio.multisim.config=dsds
+    setprop persist.radio.multisim.config dsds
+    setprop ro.telephony.default_network "22,22"
+    setprop persist.vendor.radio.block_allow_data 0
+    enable ril-daemon2
+
+on property:persist.vendor.radio.multisim.config=ss
+    setprop ro.telephony.default_network 22
+    setprop persist.vendor.radio.block_allow_data 1
+
 service ril-daemon2 /vendor/bin/hw/rild -c 2
     class main
     user radio
