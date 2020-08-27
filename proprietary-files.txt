@@ -72,6 +72,7 @@ lib64/com.qualcomm.qti.ant@1.0.so
 lib/com.qualcomm.qti.ant@1.0.so
 #-lib/libantradio.so
 #vendor/lib64/hw/com.qualcomm.qti.ant@1.0-impl.so
+vendor/lib/com.qualcomm.qti.ant@1.0_vendor.so
 vendor/lib64/com.qualcomm.qti.ant@1.0_vendor.so
 
 # Audio libraries
@@ -134,11 +135,11 @@ lib/libaptX_encoder.so|984739a0bc968e18f75ced205733fe3f51c2d4f0
 lib/libaptXHD_encoder.so|974c486e4ca03faa0713553d9dfe2995ac93e01c
 
 # Camera
-etc/flashled_calc_parameters.cfg
-lib64/libcamera_clientsemc.so
-lib64/libtrueportrait.so
-lib/libcamera_clientsemc.so
-lib/libtrueportrait.so
+etc/flashled_calc_parameters.cfg:vendor/etc/flashled_calc_parameters.cfg
+lib64/libcamera_clientsemc.so:vendor/lib64/libcamera_clientsemc.so
+lib64/libtrueportrait.so:vendor/lib64/libtrueportrait.so
+lib/libcamera_clientsemc.so:vendor/lib/libcamera_clientsemc.so
+lib/libtrueportrait.so:vendor/lib/libtrueportrait.so
 vendor/bin/mm-qcamera-daemon
 vendor/lib64/libcameralight.so
 vendor/lib64/libcammw_util.so
@@ -323,20 +324,20 @@ vendor/lib/libwqe.so
 vendor/lib/libxml.so
 
 # CMN firmware
-etc/firmware/cmnlib.b00
-etc/firmware/cmnlib.b01
-etc/firmware/cmnlib.b02
-etc/firmware/cmnlib.b03
-etc/firmware/cmnlib.b04
-etc/firmware/cmnlib.b05
-etc/firmware/cmnlib.mdt
-etc/firmware/cmnlib64.b00
-etc/firmware/cmnlib64.b01
-etc/firmware/cmnlib64.b02
-etc/firmware/cmnlib64.b03
-etc/firmware/cmnlib64.b04
-etc/firmware/cmnlib64.b05
-etc/firmware/cmnlib64.mdt
+etc/firmware/cmnlib.b00:vendor/etc/firmware/cmnlib.b00
+etc/firmware/cmnlib.b01:vendor/etc/firmware/cmnlib.b01
+etc/firmware/cmnlib.b02:vendor/etc/firmware/cmnlib.b02
+etc/firmware/cmnlib.b03:vendor/etc/firmware/cmnlib.b03
+etc/firmware/cmnlib.b04:vendor/etc/firmware/cmnlib.b04
+etc/firmware/cmnlib.b05:vendor/etc/firmware/cmnlib.b05
+etc/firmware/cmnlib.mdt:vendor/etc/firmware/cmnlib.mdt
+etc/firmware/cmnlib64.b00:vendor/etc/firmware/cmnlib64.b00
+etc/firmware/cmnlib64.b01:vendor/etc/firmware/cmnlib64.b01
+etc/firmware/cmnlib64.b02:vendor/etc/firmware/cmnlib64.b02
+etc/firmware/cmnlib64.b03:vendor/etc/firmware/cmnlib64.b03
+etc/firmware/cmnlib64.b04:vendor/etc/firmware/cmnlib64.b04
+etc/firmware/cmnlib64.b05:vendor/etc/firmware/cmnlib64.b05
+etc/firmware/cmnlib64.mdt:vendor/etc/firmware/cmnlib64.mdt
 
 # DPM
 vendor/bin/dpmQmiMgr
@@ -541,7 +542,7 @@ vendor/lib64/vendor.semc.system.idd.fallback@1.0_vendor.so
 -app/ims/ims.apk
 etc/permissions/qti-vzw-ims-internal.xml
 lib64/com.qualcomm.qti.imscmservice@1.0.so
-lib64/libdiag_system.so
+lib64/libdiag_system.so:vendor/lib64/libdiag_system.so
 lib64/libimscamera_jni.so
 lib64/lib-imscamera.so
 lib64/libimsmedia_jni.so
@@ -551,7 +552,7 @@ lib64/lib-imsvt.so
 lib64/lib-imsvtutils.so
 lib64/librcc.so
 lib64/vendor.qti.imsrtpservice@1.0.so
-lib/libdiag_system.so
+lib/libdiag_system.so:vendor/lib/libdiag_system.so
 vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
@@ -653,15 +654,15 @@ vendor/lib/libperipheral_client.so
 
 # Postprocessing - from bardock-pro - OPM1.171019.019
 etc/permissions/com.qti.snapdragon.sdk.display.xml|0bff16d681e75f203c1e11ff33afba82490e49b3
-framework/com.qti.snapdragon.sdk.display.jar|cc367fe3c3525bc580f0d3ab41e43190dcee60dc
-lib64/libsd_sdk_display.so|8b79762452896eaa9ff97b7ae72646bfcf06423d
-lib64/vendor.display.color@1.0.so|ecd9bfd4e7f416218c172481a7192328f5c2a48f
-lib64/vendor.display.postproc@1.0.so|67e865d2c463d36c8eda8528ef4f36462b973eef
-lib64/vendor.qti.hardware.qdutils_disp@1.0.so|182817148907df624dcea5af27fd8d8256e02442
-lib/libsd_sdk_display.so|35f948fad2633f8cf2c004655e1c24fa4a2b4eaf
-lib/vendor.display.color@1.0.so|3ace5cf91dd9686a2250dfb7c50f883f81f38b74
-lib/vendor.display.postproc@1.0.so|d6069ae2c43121117acf976c79b1ce59735cfe3b
-lib/vendor.qti.hardware.qdutils_disp@1.0.so|a12b9e484ce9f7ab590b3fee91d320cba903badc
+framework/com.qti.snapdragon.sdk.display.jar:vendor/framework/com.qti.snapdragon.sdk.display.jar|cc367fe3c3525bc580f0d3ab41e43190dcee60dc
+lib64/libsd_sdk_display.so:vendor/lib64/libsd_sdk_display.so|8b79762452896eaa9ff97b7ae72646bfcf06423d
+lib64/vendor.display.color@1.0.so:vendor/lib64/vendor.display.color@1.0.so|ecd9bfd4e7f416218c172481a7192328f5c2a48f
+lib64/vendor.display.postproc@1.0.so:vendor/lib64/vendor.display.postproc@1.0.so|67e865d2c463d36c8eda8528ef4f36462b973eef
+lib64/vendor.qti.hardware.qdutils_disp@1.0.so:vendor/lib64/vendor.qti.hardware.qdutils_disp@1.0.so|182817148907df624dcea5af27fd8d8256e02442
+lib/libsd_sdk_display.so:vendor/lib/libsd_sdk_display.so|35f948fad2633f8cf2c004655e1c24fa4a2b4eaf
+lib/vendor.display.color@1.0.so:vendor/lib/vendor.display.color@1.0.so|3ace5cf91dd9686a2250dfb7c50f883f81f38b74
+lib/vendor.display.postproc@1.0.so:vendor/lib/vendor.display.postproc@1.0.so|d6069ae2c43121117acf976c79b1ce59735cfe3b
+lib/vendor.qti.hardware.qdutils_disp@1.0.so:vendor/lib/vendor.qti.hardware.qdutils_disp@1.0.so|a12b9e484ce9f7ab590b3fee91d320cba903badc
 vendor/bin/hw/vendor.display.color@1.0-service|fec0d808fa0b795bf3afe8cad8afa06dcc3bf6e1
 vendor/bin/hw/vendor.qti.hardware.qdutils_disp@1.0-service-qti|dc6ff7d6bdb4bd7ee248eb03e4b1e53bd04f8221
 vendor/bin/mm-pp-dpps|e14258c9509f82aeb145ef2dd2f3e867c6fecbf9
@@ -677,8 +678,8 @@ vendor/lib/vendor.display.postproc@1.0_vendor.so|a710a9d7f93892961ff71420fe222ad
 vendor/lib/vendor.qti.hardware.qdutils_disp@1.0_vendor.so|04bf21220673630ebaa4c8e7a84adbcdcf08f0dc
 
 # QMI
-etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
-etc/permissions/qti_permissions.xml
+etc/permissions/qti_libpermissions.xml:vendor/etc/permissions/qti_libpermissions.xml|ef3c88495f2f61a2d16e1445113a9d80f8db0e0a
+etc/permissions/qti_permissions.xml:vendor/etc/permissions/qti_permissions.xml
 vendor/bin/irsc_util
 vendor/lib64/libdiag.so
 vendor/lib64/libdsi_netctrl.so
@@ -717,11 +718,11 @@ vendor/lib/libsmemlog.so
 framework/qti-telephony-common.jar|2eba987ae297a892e895ec1e9a302b41dbe0232e
 
 # RIL
--app/QtiTelephonyService/QtiTelephonyService.apk
-etc/permissions/qcrilhook.xml
-etc/permissions/telephonyservice.xml
-framework/qcrilhook.jar
-framework/QtiTelephonyServicelibrary.jar
+-app/QtiTelephonyService/QtiTelephonyService.apk:vendor/app/QtiTelephonyService/QtiTelephonyService.apk
+etc/permissions/qcrilhook.xml:vendor/etc/permissions/qcrilhook.xml
+etc/permissions/telephonyservice.xml:vendor/etc/permissions/telephonyservice.xml
+-framework/qcrilhook.jar:vendor/framework/qcrilhook.jar
+framework/QtiTelephonyServicelibrary.jar:vendor/framework/QtiTelephonyServicelibrary.jar
 -priv-app/qcrilmsgtunnel/qcrilmsgtunnel.apk
 vendor/bin/ATFWD-daemon
 vendor/bin/netmgrd
@@ -755,9 +756,9 @@ vendor/lib/libnetmgr.so
 vendor/radio/qcril_database/qcril.db
 
 # SECD
-lib64/libdevice_security_client.so
-lib64/libtpm.so
-lib64/vendor.semc.hardware.secd@1.0.so
+lib64/libdevice_security_client.so:vendor/lib64/libdevice_security_client.so
+lib64/libtpm.so:vendor/lib64/libtpm.so
+lib64/vendor.semc.hardware.secd@1.0.so:vendor/lib64/vendor.semc.hardware.secd@1.0.so
 vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
 vendor/bin/secd
 vendor/lib64/lib_asb_tee.so
@@ -784,14 +785,14 @@ vendor/lib/libta_drm_ext.so|def802a5eef691a9b48a191f56116c8da900fdd3
 vendor/lib/vendor.semc.hardware.secd@1.0_vendor.so
 
 # Sensors
-lib64/libqmi_cci_system.so
-lib64/libsensor1.so
-lib64/libsensor_reg.so
-lib64/sensors.finger-pickup.so
-lib/libqmi_cci_system.so
-lib/libsensor1.so
-lib/libsensor_reg.so
-lib/sensors.finger-pickup.so
+lib64/libqmi_cci_system.so:vendor/lib64/libqmi_cci_system.so
+lib64/libsensor1.so:vendor/lib64/libsensor1.so
+lib64/libsensor_reg.so:vendor/lib64/libsensor_reg.so
+lib64/sensors.finger-pickup.so:vendor/lib64/sensors.finger-pickup.so
+lib/libqmi_cci_system.so:vendor/lib/libqmi_cci_system.so
+lib/libsensor1.so:vendor/lib/libsensor1.so
+lib/libsensor_reg.so:vendor/lib/libsensor_reg.so
+lib/sensors.finger-pickup.so:vendor/lib/sensors.finger-pickup.so
 vendor/bin/sensors.qcom
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsdsprpc.so
@@ -851,62 +852,62 @@ vendor/bin/time_daemon
 vendor/lib64/libtime_genoff.so
 
 # TrustZone firmware
-etc/firmware/tzattest.b00
-etc/firmware/tzattest.b01
-etc/firmware/tzattest.b02
-etc/firmware/tzattest.b03
-etc/firmware/tzattest.b04
-etc/firmware/tzattest.b05
-etc/firmware/tzattest.b06
-etc/firmware/tzattest.mdt
-etc/firmware/tzhdcp.b00
-etc/firmware/tzhdcp.b01
-etc/firmware/tzhdcp.b02
-etc/firmware/tzhdcp.b03
-etc/firmware/tzhdcp.b04
-etc/firmware/tzhdcp.b05
-etc/firmware/tzhdcp.b06
-etc/firmware/tzhdcp.mdt
-etc/firmware/tzlibasb.b00
-etc/firmware/tzlibasb.b01
-etc/firmware/tzlibasb.b02
-etc/firmware/tzlibasb.b03
-etc/firmware/tzlibasb.b04
-etc/firmware/tzlibasb.b05
-etc/firmware/tzlibasb.b06
-etc/firmware/tzlibasb.mdt
-etc/firmware/tzsuntory.b00
-etc/firmware/tzsuntory.b01
-etc/firmware/tzsuntory.b02
-etc/firmware/tzsuntory.b03
-etc/firmware/tzsuntory.b04
-etc/firmware/tzsuntory.b05
-etc/firmware/tzsuntory.b06
-etc/firmware/tzsuntory.mdt
-etc/firmware/tztpm.b00
-etc/firmware/tztpm.b01
-etc/firmware/tztpm.b02
-etc/firmware/tztpm.b03
-etc/firmware/tztpm.b04
-etc/firmware/tztpm.b05
-etc/firmware/tztpm.b06
-etc/firmware/tztpm.mdt
-etc/firmware/tzwidevine.b00
-etc/firmware/tzwidevine.b01
-etc/firmware/tzwidevine.b02
-etc/firmware/tzwidevine.b03
-etc/firmware/tzwidevine.b04
-etc/firmware/tzwidevine.b05
-etc/firmware/tzwidevine.b06
-etc/firmware/tzwidevine.mdt
-etc/firmware/tzwvcpybuf.b00
-etc/firmware/tzwvcpybuf.b01
-etc/firmware/tzwvcpybuf.b02
-etc/firmware/tzwvcpybuf.b03
-etc/firmware/tzwvcpybuf.b04
-etc/firmware/tzwvcpybuf.b05
-etc/firmware/tzwvcpybuf.b06
-etc/firmware/tzwvcpybuf.mdt
+etc/firmware/tzattest.b00:vendor/etc/firmware/tzattest.b00
+etc/firmware/tzattest.b01:vendor/etc/firmware/tzattest.b01
+etc/firmware/tzattest.b02:vendor/etc/firmware/tzattest.b02
+etc/firmware/tzattest.b03:vendor/etc/firmware/tzattest.b03
+etc/firmware/tzattest.b04:vendor/etc/firmware/tzattest.b04
+etc/firmware/tzattest.b05:vendor/etc/firmware/tzattest.b05
+etc/firmware/tzattest.b06:vendor/etc/firmware/tzattest.b06
+etc/firmware/tzattest.mdt:vendor/etc/firmware/tzattest.mdt
+etc/firmware/tzhdcp.b00:vendor/etc/firmware/tzhdcp.b00
+etc/firmware/tzhdcp.b01:vendor/etc/firmware/tzhdcp.b01
+etc/firmware/tzhdcp.b02:vendor/etc/firmware/tzhdcp.b02
+etc/firmware/tzhdcp.b03:vendor/etc/firmware/tzhdcp.b03
+etc/firmware/tzhdcp.b04:vendor/etc/firmware/tzhdcp.b04
+etc/firmware/tzhdcp.b05:vendor/etc/firmware/tzhdcp.b05
+etc/firmware/tzhdcp.b06:vendor/etc/firmware/tzhdcp.b06
+etc/firmware/tzhdcp.mdt:vendor/etc/firmware/tzhdcp.mdt
+etc/firmware/tzlibasb.b00:vendor/etc/firmware/tzlibasb.b00
+etc/firmware/tzlibasb.b01:vendor/etc/firmware/tzlibasb.b01
+etc/firmware/tzlibasb.b02:vendor/etc/firmware/tzlibasb.b02
+etc/firmware/tzlibasb.b03:vendor/etc/firmware/tzlibasb.b03
+etc/firmware/tzlibasb.b04:vendor/etc/firmware/tzlibasb.b04
+etc/firmware/tzlibasb.b05:vendor/etc/firmware/tzlibasb.b05
+etc/firmware/tzlibasb.b06:vendor/etc/firmware/tzlibasb.b06
+etc/firmware/tzlibasb.mdt:vendor/etc/firmware/tzlibasb.mdt
+etc/firmware/tzsuntory.b00:vendor/etc/firmware/tzsuntory.b00
+etc/firmware/tzsuntory.b01:vendor/etc/firmware/tzsuntory.b01
+etc/firmware/tzsuntory.b02:vendor/etc/firmware/tzsuntory.b02
+etc/firmware/tzsuntory.b03:vendor/etc/firmware/tzsuntory.b03
+etc/firmware/tzsuntory.b04:vendor/etc/firmware/tzsuntory.b04
+etc/firmware/tzsuntory.b05:vendor/etc/firmware/tzsuntory.b05
+etc/firmware/tzsuntory.b06:vendor/etc/firmware/tzsuntory.b06
+etc/firmware/tzsuntory.mdt:vendor/etc/firmware/tzsuntory.mdt
+etc/firmware/tztpm.b00:vendor/etc/firmware/tztpm.b00
+etc/firmware/tztpm.b01:vendor/etc/firmware/tztpm.b01
+etc/firmware/tztpm.b02:vendor/etc/firmware/tztpm.b02
+etc/firmware/tztpm.b03:vendor/etc/firmware/tztpm.b03
+etc/firmware/tztpm.b04:vendor/etc/firmware/tztpm.b04
+etc/firmware/tztpm.b05:vendor/etc/firmware/tztpm.b05
+etc/firmware/tztpm.b06:vendor/etc/firmware/tztpm.b06
+etc/firmware/tztpm.mdt:vendor/etc/firmware/tztpm.mdt
+etc/firmware/tzwidevine.b00:vendor/etc/firmware/tzwidevine.b00
+etc/firmware/tzwidevine.b01:vendor/etc/firmware/tzwidevine.b01
+etc/firmware/tzwidevine.b02:vendor/etc/firmware/tzwidevine.b02
+etc/firmware/tzwidevine.b03:vendor/etc/firmware/tzwidevine.b03
+etc/firmware/tzwidevine.b04:vendor/etc/firmware/tzwidevine.b04
+etc/firmware/tzwidevine.b05:vendor/etc/firmware/tzwidevine.b05
+etc/firmware/tzwidevine.b06:vendor/etc/firmware/tzwidevine.b06
+etc/firmware/tzwidevine.mdt:vendor/etc/firmware/tzwidevine.mdt
+etc/firmware/tzwvcpybuf.b00:vendor/etc/firmware/tzwvcpybuf.b00
+etc/firmware/tzwvcpybuf.b01:vendor/etc/firmware/tzwvcpybuf.b01
+etc/firmware/tzwvcpybuf.b02:vendor/etc/firmware/tzwvcpybuf.b02
+etc/firmware/tzwvcpybuf.b03:vendor/etc/firmware/tzwvcpybuf.b03
+etc/firmware/tzwvcpybuf.b04:vendor/etc/firmware/tzwvcpybuf.b04
+etc/firmware/tzwvcpybuf.b05:vendor/etc/firmware/tzwvcpybuf.b05
+etc/firmware/tzwvcpybuf.b06:vendor/etc/firmware/tzwvcpybuf.b06
+etc/firmware/tzwvcpybuf.mdt:vendor/etc/firmware/tzwvcpybuf.mdt
 
 # Widevine DRM - from marlin - OPM1.171019.011
 vendor/bin/hw/android.hardware.drm@1.0-service.widevine|fd6e14710c196fdd4131afe2ce10c4a5be1b309c
