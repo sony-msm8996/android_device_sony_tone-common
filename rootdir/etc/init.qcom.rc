@@ -572,6 +572,12 @@ service qseecomd /vendor/bin/qseecomd
     group root
     writepid /dev/cpuset/system-background/tasks
 
+service msim_sh /vendor/bin/init.qcom.msim.sh
+    class core
+    user root
+    group root
+    oneshot
+
 service time_daemon /vendor/bin/time_daemon
     class main
     user root
