@@ -181,10 +181,10 @@ on post-fs-data
     mkdir /data/time/ 0700 system system
 
     # OTG switch
-    chown system system /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling
-    chown system system /sys/module/qpnp_smbcharger_extension/parameters/force_id_polling_on
-    chown system system /sys/module/qpnp_smbcharger_extension/parameters/id_polling_timeout
-    chown system system /sys/module/qpnp_smbcharger_extension/parameters/id_polling_state
+    chown system system /sys/module/qpnp_smbcharger/parameters/start_id_polling
+    chown system system /sys/module/qpnp_smbcharger/parameters/force_id_polling_on
+    chown system system /sys/module/qpnp_smbcharger/parameters/id_polling_timeout
+    chown system system /sys/module/qpnp_smbcharger/parameters/id_polling_state
 
     setprop vold.post_fs_data_done 1
 
@@ -752,8 +752,8 @@ service vendor.semc.hardware.secd-1-0 /vendor/bin/hw/vendor.semc.hardware.secd@1
     group system
 
 on property:service.usb.otg.switch=check
-    write /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling 1
+    write /sys/module/qpnp_smbcharger/parameters/start_id_polling 1
     setprop service.usb.otg_switch check_done
 
 on property:service.usb.otg.switch.timeout=*
-    write /sys/module/qpnp_smbcharger_extension/parameters/id_polling_timeout ${service.usb.otg.switch.timeout}
+    write /sys/module/qpnp_smbcharger/parameters/id_polling_timeout ${service.usb.otg.switch.timeout}
