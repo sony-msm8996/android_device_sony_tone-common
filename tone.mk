@@ -278,6 +278,10 @@ PRODUCT_PACKAGES += \
     libOmxVenc \
     libstagefrighthw
 
+# OTG
+PRODUCT_PACKAGES += \
+    SonyOtgSwitch
+
 # Power
 PRODUCT_PACKAGES += \
     android.hardware.power@1.0-service-qti

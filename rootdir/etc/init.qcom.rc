@@ -180,6 +180,12 @@ on post-fs-data
     # Create /data/time folder for time-services
     mkdir /data/time/ 0700 system system
 
+    # OTG switch
+    chown system system /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling
+    chown system system /sys/module/qpnp_smbcharger_extension/parameters/force_id_polling_on
+    chown system system /sys/module/qpnp_smbcharger_extension/parameters/id_polling_timeout
+    chown system system /sys/module/qpnp_smbcharger_extension/parameters/id_polling_state
+
     setprop vold.post_fs_data_done 1
 
     # Create PERFD deamon related dirs
@@ -744,3 +750,10 @@ service vendor.semc.hardware.secd-1-0 /vendor/bin/hw/vendor.semc.hardware.secd@1
     class hal
     user system
     group system
+
+on property:service.usb.otg.switch=check
+    write /sys/module/qpnp_smbcharger_extension/parameters/start_id_polling 1
+    setprop service.usb.otg_switch check_done
+
+on property:service.usb.otg.switch.timeout=*
+    write /sys/module/qpnp_smbcharger_extension/parameters/id_polling_timeout ${service.usb.otg.switch.timeout}
