@@ -430,9 +430,8 @@ vendor/bin/hw/android.hardware.drm@1.1-service.widevine|2c2455a218eb8d5368f1ccd3
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|5a01d337c1d375ee24a6c8992ba91f54afb7637e
 vendor/lib/libwvhidl.so|37333d17980282275805807bc648bf8516fd4143
 
-# Gatekeeper
-vendor/lib64/hw/gatekeeper.msm8996.so
-vendor/lib/hw/gatekeeper.msm8996.so
+# Gatekeeper - from LA.UM.7.5.r1-04800-8x96.0
+vendor/lib64/hw/gatekeeper.msm8996.so|d324fd57026ac20409c474cfc4e15595aa9d4738
 
 # GPS - from B2N_sprout - PPR1.180610.011
 lib64/vendor.qti.gnss@1.0.so|5328d1ff2418107d1ec51403a53471eb2e37bc8d
@@ -625,9 +624,8 @@ vendor/lib64/lib-uceservice.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0-service-Impl.so
 vendor/lib64/vendor.qti.imsrtpservice@1.0_vendor.so
 
-# Keystore
-vendor/lib64/hw/keystore.msm8996.so
-vendor/lib/hw/keystore.msm8996.so
+# Keystore - from LA.UM.7.5.r1-04800-8x96.0
+vendor/lib64/hw/keystore.msm8996.so|e4139ac911fd0aafa73bd2901ab273c04c99ccc9
 
 # Lights
 vendor/lib64/liblights-core.so
