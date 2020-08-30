@@ -525,9 +525,9 @@ vendor/lib/librs_adreno_sha1.so
 vendor/lib/librs_adreno.so
 vendor/lib/libRSDriver_adreno.so
 
-# Graphics (HDR) - from bardock-pro - OPM1.171019.019
-vendor/lib/libhdr_tm.so|9f191fda6909c92b29ac15c3d2cbf65c2db94b13
-vendor/lib64/libhdr_tm.so|9a61ddbece993d3329d337265f7be5278c237833
+# Graphics (HDR) - from daisy - PKQ1.180917.001
+vendor/lib64/libhdr_tm.so|df15d487e73560f81017bcf4a73c28c9697b1ed9
+vendor/lib/libhdr_tm.so|8060a5d9ed0283c7b89716165ba8af4b86ef0210
 
 # Graphics (SDM) - from B2N_sprout - PPR1.180610.011
 vendor/lib/libqseed3.so|c60e08f5efa1e9aea339a7a5a6dccdc2d107f530
