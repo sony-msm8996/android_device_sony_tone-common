@@ -834,6 +834,17 @@ vendor/lib/libsuntory_utils.so
 vendor/lib/libta_drm_ext.so|def802a5eef691a9b48a191f56116c8da900fdd3
 vendor/lib/vendor.semc.hardware.secd@1.0_vendor.so
 
+# Sensors - from LA.UM.7.5.r1-04800-8x96.0
+vendor/bin/sensors.qti|18011d46135a2635bcfdc34e8b4d3fdaff7a76fb
+vendor/lib64/hw/activity_recognition.msm8996.so|c29a0dfff27824dac39a21f56a92bf319acb051b
+vendor/lib64/libsensor1.so|1934268e2f28ee9d705d5ff060544d06e42afcc3
+vendor/lib64/libsensor_reg.so|942fbf9ef1cfc87596f850e7ff1a86e7a9ddc846
+vendor/lib64/sensors.ssc.so|e49e3c585da09b323948e1c1201118d426f3d558
+vendor/lib/hw/activity_recognition.msm8996.so|58878fbcf8e98a8f053c3d1fbaa1beb4d7776d12
+vendor/lib/libsensor1.so|d73573eca4e1eaf52f09f9cc7292cdc6d9d69c70
+vendor/lib/libsensor_reg.so|2d95cea1df93dcaae0f067157f6932c1381dec53
+vendor/lib/sensors.ssc.so|96a37b515969d72875debd9ee0a505406d75bd3c
+
 # Sensors
 lib64/libqmi_cci_system.so
 lib64/libsensor1.so
@@ -843,20 +854,11 @@ lib/libqmi_cci_system.so
 lib/libsensor1.so
 lib/libsensor_reg.so
 lib/sensors.finger-pickup.so
-vendor/bin/sensors.qcom
-vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsdsprpc.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensor_reg.so
 vendor/lib64/sensor_calibrate.so
-vendor/lib64/sensors.ssc.so
 vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
-vendor/lib/hw/activity_recognition.msm8996.so
 vendor/lib/libsdsprpc.so
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
 vendor/lib/sensor_calibrate.so
-vendor/lib/sensors.ssc.so
 vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
 
 # SoMC: Radio
