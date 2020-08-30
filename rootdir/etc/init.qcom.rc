@@ -185,6 +185,20 @@ on post-fs-data
     chown root system /dev/sensors
     chmod 0660 /dev/sensors
 
+    # Sensors
+    chown system system /mnt/vendor/persist/sensors/gyro_sensitity_cal
+
+    chown system system /mnt/vendor/persist/sensors
+    chown system system /mnt/vendor/persist/sensors/sns.reg
+    chown system system /mnt/vendor/persist/sensors/sensors_list.txt
+    chown system system /mnt/vendor/persist/sensors/registry
+    chown system system /mnt/vendor/persist/sensors/registry/registry
+    chown system system /mnt/vendor/persist/sensors/registry/registry/sensors_registry
+    chown system system /mnt/vendor/persist/sensors/sensors_settings
+    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
+    chown system system /mnt/vendor/persist/sensors/registry/config
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time 0700 system system
 
