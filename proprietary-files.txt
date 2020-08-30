@@ -890,13 +890,11 @@ vendor/lib64/libsmemlog.so
 vendor/lib64/libta.so
 vendor/lib64/vendor.somc.hardware.miscta@1.0_vendor.so
 
-# Thermal
-vendor/bin/thermal-engine
-vendor/lib64/libsys-utils.so
--vendor/lib64/libthermalclient.so
-vendor/lib64/libthermalioctl.so
-vendor/lib/libsys-utils.so
--vendor/lib/libthermalclient.so
+# Thermal - from LA.UM.7.5.r1-04800-8x96.0
+vendor/bin/thermal-engine|e55d69e197f993a04ead228b42f28fd1d7b1294b
+-vendor/lib64/libthermalclient.so|0ce3a04917e936777182e8c6eaaf5b2a308d92cf
+vendor/lib64/libthermalioctl.so|e1597b961c1bee480f018dd7d2cc4e9fc2bb252b
+-vendor/lib/libthermalclient.so|7c3e567459a872a29611fc1b270fb7318b8a4d37
 
 # Time services - from LA.UM.7.5.r1-04800-8x96.0
 -vendor/app/TimeService/TimeService.apk|693a68e35a2cbc40d23b291fcc836c8567f90b14
