@@ -168,17 +168,17 @@ on post-fs-data
     mkdir /dev/socket/location/xtra 0770 gps gps
 
     # SSC/SLPI sensors
-    mkdir /persist/sensors
-    chown root system /persist/sensors
-    chmod 0775 /persist/sensors
+    mkdir /mnt/vendor/persist/sensors
+    chown root system /mnt/vendor/persist/sensors
+    chmod 0775 /mnt/vendor/persist/sensors
     chown root system /persist/sensors/sensors_settings
-    chmod 0664 /persist/sensors/sensors_settings
-    chown root system /persist/sensors/sns.reg
-    chmod 0664 /persist/sensors/sns.reg
-    chown root system /persist/PRSensorData.txt
-    chmod 0660 /persist/PRSensorData.txt
-    chown root system /persist/PSensor3cm_ct.txt
-    chmod 0660 /persist/PSensor3cm_ct.txt
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
+    chown root system /mnt/vendor/persist/sensors/sns.reg
+    chmod 0664 /mnt/vendor/persist/sensors/sns.reg
+    chown root system /mnt/vendor/persist/PRSensorData.txt
+    chmod 0660 /mnt/vendor/persist/PRSensorData.txt
+    chown root system /mnt/vendor/persist/PSensor3cm_ct.txt
+    chmod 0660 /mnt/vendor/persist/PSensor3cm_ct.txt
 
     # /dev/sensors only supports an ioctl to get the current SLPI timestamp;
     # allow the sensors daemon to perform this as non-root
@@ -234,7 +234,7 @@ on post-fs-data
     restorecon_recursive /rca
 
     # Sony security daemon
-    mkdir /persist/pc/ 0770 radio system
+    mkdir /mnt/vendor/persist/pc/ 0770 radio system
     mkdir /data/credmgr 0770 system oem_2996
 
     # Sony camera module
@@ -316,14 +316,14 @@ on boot
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
 
-    mkdir /persist/drm 0770 system system
-    mkdir /persist/misc 0770 system system
-    mkdir /persist/alarm 0770 system system
-    mkdir /persist/data/sfs 0700 system system
-    mkdir /persist/data/tz 0700 system system
-    mkdir /persist/qc_senseid 0700 system system
-    mkdir /persist/wlan_bt 0770 system system
-    mkdir /persist/audio 0777 media audio
+    mkdir /mnt/vendor/persist/drm 0770 system system
+    mkdir /mnt/vendor/persist/misc 0770 system system
+    mkdir /mnt/vendor/persist/alarm 0770 system system
+    mkdir /mnt/vendor/persist/data/sfs 0700 system system
+    mkdir /mnt/vendor/persist/data/tz 0700 system system
+    mkdir /mnt/vendor/persist/qc_senseid 0700 system system
+    mkdir /mnt/vendor/persist/wlan_bt 0770 system system
+    mkdir /mnt/vendor/persist/audio 0777 media audio
 
     # Create NETMGR daemon socket area
     mkdir /dev/socket/netmgr 0750 radio radio
