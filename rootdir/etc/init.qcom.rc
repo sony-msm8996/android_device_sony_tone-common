@@ -236,6 +236,7 @@ on post-fs-data
     # Sony security daemon
     mkdir /persist/pc/ 0770 radio system
     mkdir /data/credmgr 0770 system oem_2996
+    mkdir /data/etc 0755 root shell
 
     # Sony camera module
     chown cameraserver camera /sys/devices/sony_camera_0/info
