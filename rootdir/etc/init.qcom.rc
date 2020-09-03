@@ -256,6 +256,8 @@ on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
 
+   start sct_service
+
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
     write /sys/kernel/boot_slpi/boot 1
@@ -712,11 +714,11 @@ service ta_qmi_service /vendor/bin/ta_qmi_service
     group wakelock
     writepid /dev/cpuset/system-background/tasks
 
-# Secure config transfer service
+# Secure Config Transfer service
 service sct_service /vendor/bin/sct_service
-    class main
-    user root drmrpc
-    writepid /dev/cpuset/system-background/tasks
+   user root
+   seclabel u:r:sct_service:s0
+   disabled
 
 # Modem log probe service
 service mlog_qmi_service /vendor/bin/mlog_qmi_service
