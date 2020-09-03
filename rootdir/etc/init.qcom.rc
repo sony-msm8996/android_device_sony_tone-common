@@ -98,6 +98,8 @@ on fs
     # Wait qseecomd started
     wait_for_prop sys.listeners.registered true
 
+    write /dev/ipa 1
+
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
