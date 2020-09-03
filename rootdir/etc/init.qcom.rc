@@ -88,6 +88,8 @@ on fs
     # start clearpad_post_probe when filesystem is available for fwflash
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
 
+    write /dev/ipa 1
+
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
