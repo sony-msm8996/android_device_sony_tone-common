@@ -719,7 +719,7 @@ lib/libqmi_cci_system.so
 lib/libsensor1.so
 lib/libsensor_reg.so
 lib/sensors.finger-pickup.so
-vendor/bin/sensors.qcom
+vendor/bin/sensors.qcom:vendor/bin/sensors.qti
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsdsprpc.so
 vendor/lib64/libsensor1.so
