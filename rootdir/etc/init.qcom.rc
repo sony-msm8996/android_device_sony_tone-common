@@ -53,9 +53,6 @@ on init
     # Avoid long waits for rcu grace periods
     write /sys/kernel/rcu_expedited 1
 
-    # Load persistent dm-verity state
-    verity_load_state
-
 on fs
     # Start HW service manager early
     start hwservicemanager
@@ -276,9 +273,6 @@ on early-boot
     chown bluetooth net_bt /proc/bluetooth/sleep/btwrite
     chmod 0660 /proc/bluetooth/sleep/lpm
     chmod 0660 /proc/bluetooth/sleep/btwrite
-
-    # Update dm-verity state and set partition.*.verified properties
-    verity_update_state
 
 on boot
     # Tap to wake
