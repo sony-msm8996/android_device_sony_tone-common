@@ -211,7 +211,9 @@ PRODUCT_PACKAGES += \
 # HIDL
 PRODUCT_PACKAGES += \
     android.hidl.base@1.0 \
-    android.hidl.manager@1.0
+    android.hidl.manager@1.0 \
+    libhidltransport \
+    libhwbinder
 
 # HW crypto
 PRODUCT_PACKAGES += \
