@@ -7,11 +7,10 @@
 /dev/block/platform/soc/7464900\.sdhci/by-name/modemst2        u:object_r:modem_block_device:s0
 /dev/block/bootdevice/by-name/modemst2                         u:object_r:modem_block_device:s0
 
-#BT Firmare
-/bt_firmware(/.*)?        u:object_r:bt_firmware_file:s0
-
-# Firmware
-/firmware(/.*)?           u:object_r:firmware_file:s0
+# Root files
+/bt_firmware(/.*)?    u:object_r:bt_firmware_file:s0
+/firmware(/.*)?       u:object_r:firmware_file:s0
+/persist(/.*)?        u:object_r:mnt_vendor_file:s0
 
 # HALs
 /(vendor|system/vendor)/bin/hw/android\.hardware\.drm@1\.1-service\.clearkey         u:object_r:hal_drm_clearkey_exec:s0
