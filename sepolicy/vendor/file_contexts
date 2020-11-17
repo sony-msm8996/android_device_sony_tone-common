@@ -33,7 +33,6 @@
 /data/connectivity(/.*)?                      u:object_r:cnd_core_data_file:s0
 /data/vendor/location/xtra/socket_hal_xtra    u:object_r:location_socket:s0
 /data/vendor/location/xtra/socket_xtra        u:object_r:location_socket:s0
-/data/vendor/misc/egistec(/.*)?               u:object_r:egistec_data_file:s0
 /lta-label                                    u:object_r:rootfs:s0
 /mnt/idd                                      u:object_r:idd_root_dir:s0
 /mnt/idd(/.*)?                                u:object_r:idd_data_file:s0
@@ -54,7 +53,6 @@
 /vendor/bin/sct_service					u:object_r:sct_exec:s0
 
 # tad
-/dev/socket/tad						u:object_r:tad_socket:s0
 /(vendor|system/vendor)/bin/tad_static			u:object_r:tad_exec:s0
 
 # Binaries
