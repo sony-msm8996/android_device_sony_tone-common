@@ -1,2 +1,0 @@
-# Allow wcnss_service to get cei_prop
-get_prop(wcnss_service, cei_prop)
