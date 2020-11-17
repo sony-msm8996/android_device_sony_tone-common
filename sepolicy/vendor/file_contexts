@@ -44,6 +44,7 @@
 /mnt/idd/socket(/.*)?                         u:object_r:idd_socket_file:s0
 /mnt/idd/startup-prober(/.*)?                 u:object_r:startupprober_file:s0
 /mnt/qns(/.*)?                                u:object_r:qns_file:s0
+/mnt/rca                                      u:object_r:idd_rca_dir:s0
 /rca(/.*)?                                    u:object_r:idd_rca_file:s0
 
 # Shell scripts

@@ -7,7 +7,9 @@ type idd_data_file, file_type;
 type idd_fsck_file, file_type;
 type idd_lostfound_file, file_type;
 type idd_output_file, file_type;
+type idd_rca_dir, file_type;
 type idd_rca_file, file_type;
+
 
 # LTALabel
 type lta_label, fs_type;
