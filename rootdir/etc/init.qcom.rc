@@ -274,7 +274,6 @@ on early-boot
     chmod 0660 /proc/bluetooth/sleep/btwrite
 
 on boot
-    start vendor.rmt_storage
     # Tap to wake
     chown system system /sys/devices/virtual/input/clearpad/wakeup_gesture
     chmod 0660 /sys/devices/virtual/input/clearpad/wakeup_gesture
@@ -472,6 +471,7 @@ service irsc_util /vendor/bin/irsc_util "/vendor/etc/sec_config"
 service vendor.rmt_storage /vendor/bin/rmt_storage
     class core
     user root
+    group system wakelock
     shutdown critical
     ioprio rt 0
     writepid /dev/cpuset/system-background/tasks
