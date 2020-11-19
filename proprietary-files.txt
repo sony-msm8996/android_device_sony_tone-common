@@ -458,7 +458,6 @@ vendor/lib64/libprotobuf-cpp-2.3.0-lite.so
 vendor/lib64/vendor.semc.system.idd.fallback@1.0_vendor.so
 
 # IMS
-etc/permissions/qti-vzw-ims-internal.xml
 lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/libdiag_system.so
 lib64/libimscamera_jni.so
@@ -477,7 +476,6 @@ vendor/bin/imsdatadaemon
 vendor/bin/imsqmidaemon
 vendor/bin/imsrcsd
 vendor/bin/ims_rtp_daemon
-vendor/framework/qti-vzw-ims-internal.jar
 vendor/lib64/com.qualcomm.qti.imscmservice@1.0_vendor.so
 vendor/lib64/lib-dplmedia.so
 vendor/lib64/lib-imscmservice.so
