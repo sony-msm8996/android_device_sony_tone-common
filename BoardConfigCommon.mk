@@ -17,8 +17,6 @@
 
 BOARD_VENDOR := sony
 
-BUILD_BROKEN_USES_BUILD_COPY_HEADERS := true
-
 VENDOR_PATH := device/sony/tone-common
 
 # Architecture
