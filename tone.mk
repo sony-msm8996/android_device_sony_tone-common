@@ -341,6 +341,10 @@ PRODUCT_PACKAGES += \
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
 
+# Symbols
+PRODUCT_PACKAGES += \
+    libcamera_tone
+
 # Telephony
 PRODUCT_PACKAGES += \
     ims-ext-common_system \
