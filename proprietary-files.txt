@@ -291,6 +291,10 @@ vendor/bin/hw/android.hardware.drm@1.1-service.widevine|2c2455a218eb8d5368f1ccd3
 vendor/etc/init/android.hardware.drm@1.1-service.widevine.rc|5a01d337c1d375ee24a6c8992ba91f54afb7637e
 vendor/lib/libwvhidl.so|37333d17980282275805807bc648bf8516fd4143
 
+# Fingerprint
+lib64/sensors.finger-pickup.so:vendor/lib64/sensors.finger-pickup.so
+lib/sensors.finger-pickup.so:vendor/lib/sensors.finger-pickup.so
+
 # Gatekeeper
 vendor/lib64/hw/gatekeeper.msm8996.so
 vendor/lib/hw/gatekeeper.msm8996.so
@@ -676,29 +680,15 @@ vendor/lib/libta_drm_ext.so|def802a5eef691a9b48a191f56116c8da900fdd3
 vendor/lib/vendor.semc.hardware.secd@1.0_vendor.so
 
 # Sensors
-lib64/libqmi_cci_system.so
-lib64/libsensor1.so
-lib64/libsensor_reg.so
-lib64/sensors.finger-pickup.so
-lib/libqmi_cci_system.so
-lib/libsensor1.so
-lib/libsensor_reg.so
-lib/sensors.finger-pickup.so
-vendor/bin/sensors.qcom:vendor/bin/sensors.qti
-vendor/lib64/hw/activity_recognition.msm8996.so
-vendor/lib64/libsdsprpc.so
-vendor/lib64/libsensor1.so
-vendor/lib64/libsensor_reg.so
-vendor/lib64/sensor_calibrate.so
-vendor/lib64/sensors.ssc.so
-vendor/lib64/vendor.qti.hardware.sensorscalibrate@1.0.so
-vendor/lib/hw/activity_recognition.msm8996.so
-vendor/lib/libsdsprpc.so
-vendor/lib/libsensor1.so
-vendor/lib/libsensor_reg.so
-vendor/lib/sensor_calibrate.so
-vendor/lib/sensors.ssc.so
-vendor/lib/vendor.qti.hardware.sensorscalibrate@1.0.so
+vendor/bin/sensors.qti|34b67b318750daa1170730f4ffc0a9b46ee1777b
+vendor/lib64/hw/activity_recognition.msm8996.so|64901bc837ed32dee28bbff9a60df7d8ac5cd140
+vendor/lib64/libsensor1.so|f8524d62d2ad52849f4a13b018baf08d0eac8180
+vendor/lib64/libsensor_reg.so|8ca48358abf3f8f84f86036b02dbb210a5870742
+vendor/lib64/sensors.ssc.so|f4108878f452ff445bfee7d6f624e350353469e5
+vendor/lib/hw/activity_recognition.msm8996.so|6bec19a06f59abca3d43cd6a83c88fbe9daea7f6
+vendor/lib/libsensor1.so|de27fcd2ab95788e09310c5f2cf58a0540afcfe3
+vendor/lib/libsensor_reg.so|9a3568dc423598886b7f16d91d76e53cd0220387
+vendor/lib/sensors.ssc.so|2b7c1996cc12e6fac7d1fa09c5dfe1c93a1311d9
 
 # SoMC: Radio
 vendor/lib/vendor.somc.hardware.radio@1.0.so
