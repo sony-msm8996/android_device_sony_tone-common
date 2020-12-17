@@ -577,7 +577,6 @@ vendor/lib64/libidl.so
 vendor/lib64/libqcci_legacy.so
 vendor/lib64/libqdi.so
 vendor/lib64/libqdp.so
-vendor/lib64/libqmi_cci.so
 vendor/lib64/libqmi_client_helper.so
 vendor/lib64/libqmi_client_qmux.so
 vendor/lib64/libqmi_common_so.so
@@ -593,7 +592,6 @@ vendor/lib/libidl.so
 vendor/lib/libqcci_legacy.so
 vendor/lib/libqdi.so
 vendor/lib/libqdp.so
-vendor/lib/libqmi_cci.so
 vendor/lib/libqmi_client_helper.so
 vendor/lib/libqmi_client_qmux.so
 vendor/lib/libqmi_common_so.so
@@ -602,6 +600,10 @@ vendor/lib/libqmi_encdec.so
 vendor/lib/libqmi.so
 vendor/lib/libqmiservices.so
 vendor/lib/libsmemlog.so
+
+# QMI - from daisy - QKQ1.191002.002 V11.0.2.0.QDLMIXM
+vendor/lib/libqmi_cci.so|a921e84ec500f7cfb7fe88a4ffba149581410a44
+vendor/lib64/libqmi_cci.so|411a074dc765fb263bec50531ce5c408dd72388f
 
 # RIL framework - daisy - 9/PKQ1.180917.001/V10.0.1.0.PDLMIFJ
 framework/qti-telephony-common.jar|b1953a3599255f08f1785c677d22810f65e0167b
