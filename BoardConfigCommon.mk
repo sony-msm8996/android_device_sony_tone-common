@@ -103,6 +103,8 @@ USE_DEVICE_SPECIFIC_CAMERA := true
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
     /vendor/bin/mm-qcamera-daemon=26 \
     /system/vendor/bin/mm-qcamera-daemon=26 \
+    /vendor/bin/qseecomd=26 \
+    /system/vendor/bin/qseecomd=26
 
 # Charger
 BOARD_CHARGER_ENABLE_SUSPEND := true
