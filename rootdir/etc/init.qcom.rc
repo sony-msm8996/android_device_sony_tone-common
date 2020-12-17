@@ -54,13 +54,13 @@ on init
     write /sys/kernel/rcu_expedited 1
 
 on fs
-    # Start HW service manager early
-    start hwservicemanager
-
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-    mount_all /vendor/etc/fstab.qcom
+    mount_all /vendor/etc/fstab.qcom --early
+
+    # Start HW service manager early
+    start hwservicemanager
 
     # Set permissions for persist partition
     chown root system /mnt/vendor/persist
@@ -100,13 +100,6 @@ on fs
     exec - system system -- /system/bin/rm -r /cache/lost+found/.*
     exec - system system -- /system/bin/rm -r /idd/lost+found/.*
 
-    # qseecomd needs /dev/block/bootdevice
-    # vold needs keymaster that needs qseecomd
-    start vendor.qseecomd
-
-    # Wait qseecomd started
-    wait_for_prop sys.listeners.registered true
-
 on late-fs
     # boot time fs tune
     write /sys/block/sda/queue/iostats 0
@@ -117,9 +110,21 @@ on late-fs
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
 
+    # Start services for bootanim
+    start servicemanager
+    start surfaceflinger
+    start bootanim
+    start vendor.configstore-hal
+    start vendor.gralloc-2-0
+
+    # Mount RW partitions which need run fsck
+    mount_all /vendor/etc/fstab.qcom --late
+
 on post-fs
     # start clearpad_post_probe when filesystem is available for fwflash
     write /sys/devices/virtual/input/clearpad/post_probe_start 1
+
+    start vendor.qseecomd
 
 on post-fs-data
     mkdir /data/vendor/misc 01771 system system
@@ -267,6 +272,9 @@ on post-fs-data
 on early-boot
     # Set RLIMIT_MEMLOCK to 64MB
     setrlimit 8 67108864 67108864
+    start vendor.qseecomd
+    wait_for_prop sys.listeners.registered true
+    write /dev/ipa 1
 
     # Allow subsystem (modem etc) debugging
     write /sys/kernel/boot_adsp/boot 1
