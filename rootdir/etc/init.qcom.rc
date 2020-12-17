@@ -71,6 +71,13 @@ on fs
     mkdir /mnt/vendor/persist/display 0770 system graphics
     mkdir /mnt/vendor/persist/hvdcp_opti 0770 root system
     mkdir /mnt/vendor/persist/time 0770 system system
+
+    # Required for tad and modem-switcher
+    restorecon /dev/block/bootdevice/by-name/fsc
+    restorecon /dev/block/bootdevice/by-name/fsg
+    restorecon /dev/block/bootdevice/by-name/modemst1
+    restorecon /dev/block/bootdevice/by-name/modemst2
+    restorecon /dev/block/bootdevice/by-name/TA
     restorecon_recursive /mnt/vendor/persist
 
     # Sony trim area damon
@@ -81,12 +88,17 @@ on fs
     # Configure idd/rca directories
     chown oem_2987 oem_2987 /idd
     chmod 0751 /idd
-    exec /vendor/bin/rm -r /idd/lost+found
     symlink /idd /mnt/idd
+    exec - system system -- /system/bin/rm -r /mnt/idd/lost+found
     chown oem_2987 oem_2987 /rca
     chmod 0750 /rca
-    exec /vendor/bin/rm -r /rca/lost+found
     symlink /rca /mnt/rca
+    exec - system system -- /system/bin/rm -r /mnt/rca/lost+found
+
+    # Remove lost+found in user and userdebug
+    exec - system system -- /system/bin/rm -r /data/lost+found/.*
+    exec - system system -- /system/bin/rm -r /cache/lost+found/.*
+    exec - system system -- /system/bin/rm -r /idd/lost+found/.*
 
     # qseecomd needs /dev/block/bootdevice
     # vold needs keymaster that needs qseecomd
@@ -176,17 +188,17 @@ on post-fs-data
     mkdir /dev/socket/location/xtra 0770 gps gps
 
     # SSC/SLPI sensors
-    mkdir /persist/sensors
-    chown root system /persist/sensors
-    chmod 0775 /persist/sensors
-    chown root system /persist/sensors/sensors_settings
-    chmod 0664 /persist/sensors/sensors_settings
-    chown root system /persist/sensors/sns.reg
-    chmod 0664 /persist/sensors/sns.reg
-    chown root system /persist/PRSensorData.txt
-    chmod 0660 /persist/PRSensorData.txt
-    chown root system /persist/PSensor3cm_ct.txt
-    chmod 0660 /persist/PSensor3cm_ct.txt
+    chown system system /mnt/vendor/persist/sensors
+    chown system system /mnt/vendor/persist/sensors/sns.reg
+    chown system system /mnt/vendor/persist/sensors/sensors_list.txt
+    chown system system /mnt/vendor/persist/sensors/registry
+    chown system system /mnt/vendor/persist/sensors/registry/registry
+    chown system system /mnt/vendor/persist/sensors/registry/registry/sensors_registry
+    chown system system /mnt/vendor/persist/sensors/sensors_settings
+    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
+    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
+    chown system system /mnt/vendor/persist/sensors/registry/config
+    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
 
     # /dev/sensors only supports an ioctl to get the current SLPI timestamp;
     # allow the sensors daemon to perform this as non-root
@@ -523,9 +535,6 @@ service vendor.sensors.qti /vendor/bin/sensors.qti
     class core
     user system
     group system
-    # Grants the ability for this daemon to bind IPC router ports so it can
-    # register QMI services
-    capabilities NET_BIND_SERVICE
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.use_data_netmgrd=false
@@ -549,6 +558,7 @@ service wpa_supplicant /vendor/bin/hw/wpa_supplicant \
     #   group wifi inet keystore
     interface android.hardware.wifi.supplicant@1.0::ISupplicant default
     interface android.hardware.wifi.supplicant@1.1::ISupplicant default
+    interface android.hardware.wifi.supplicant@1.2::ISupplicant default
     class main
     socket wpa_wlan0 dgram 660 wifi wifi
     disabled
