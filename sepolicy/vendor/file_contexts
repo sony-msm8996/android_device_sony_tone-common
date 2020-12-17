@@ -82,3 +82,8 @@
 /(vendor|system/vendor)/bin/hw/vendor\.semc\.system\.idd\.fallback@1\.0-service                 u:object_r:hal_idd_fallback_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.somc\.hardware\.miscta@1\.0-service                      u:object_r:hal_miscta_default_exec:s0
 /(vendor|system/vendor)/bin/hw/vendor\.somc\.hardware\.wifi@1.0-service                         u:object_r:hal_wifi_hostapd_default_exec:s0
+
+# vendor services
+/(vendor|system/vendor)/bin/iddd                                u:object_r:idd_exec:s0
+/(vendor|system/vendor)/bin/updatemiscta                        u:object_r:updatemiscta_exec:s0
+/(vendor|system/vendor)/bin/taimport                            u:object_r:taimport_exec:s0
