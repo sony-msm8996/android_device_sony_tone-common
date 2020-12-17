@@ -182,7 +182,7 @@ TARGET_USERIMAGES_USE_F2FS := true
 TARGET_PROVIDES_QTI_TELEPHONY_JAR := true
 
 # Root
-BOARD_ROOT_EXTRA_FOLDERS := bt_firmware dsp firmware idd persist rca
+BOARD_ROOT_EXTRA_FOLDERS := idd rca
 
 # Security patch level
 VENDOR_SECURITY_PATCH := 2019-05-01
