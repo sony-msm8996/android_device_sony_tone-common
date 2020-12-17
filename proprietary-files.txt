@@ -272,7 +272,7 @@ vendor/lib64/libQSEEComAPI.so
 vendor/lib64/libQTEEConnector_vendor.so
 vendor/lib64/librpmb.so
 vendor/lib64/libSecureUILib.so
-vendor/lib64/libsecureui.so
+vendor/lib64/libsecureui.so|ab44674259c3cc72fc049d62d5943a1eb13d29ed
 vendor/lib64/libsecureui_svcsock.so
 vendor/lib64/libssd.so
 vendor/lib64/libStDrvInt.so
@@ -290,7 +290,7 @@ vendor/lib/libQSEEComAPI.so
 vendor/lib/libQTEEConnector_vendor.so
 vendor/lib/librpmb.so
 vendor/lib/libSecureUILib.so
-vendor/lib/libsecureui.so
+vendor/lib/libsecureui.so|b1324c75816463d6393acda173b4c74f8acaf0dc
 vendor/lib/libsecureui_svcsock.so
 vendor/lib/libssd.so
 vendor/lib/libStDrvInt.so
@@ -348,10 +348,6 @@ vendor/lib64/vendor.qti.gnss@1.0.so|433844935724722a852a795045a3fb8722ec9a02
 vendor/lib64/vendor.qti.gnss@1.1.so|127970a7c6e7b43a41bb40544f476a9dbe44ae30
 vendor/lib64/vendor.qti.gnss@1.2.so|bde82ab15ef4599eab9da48f0b2b8396cb6917e1
 vendor/lib64/vendor.qti.gnss@2.0.so|6ef9e9be6471b79f1aeddfe0e5a27627faf224ae
-
-# Graphics
-vendor/lib/lib-sec-disp.so
-vendor/lib64/lib-sec-disp.so
 
 # Graphics - Adreno
 vendor/lib64/egl/eglSubDriverAndroid.so
