@@ -57,10 +57,7 @@ on fs
     wait /dev/block/platform/soc/${ro.boot.bootdevice}
     symlink /dev/block/platform/soc/${ro.boot.bootdevice} /dev/block/bootdevice
 
-    mount_all /vendor/etc/fstab.qcom --early
-
-    # Start HW service manager early
-    start hwservicemanager
+    mount_all /vendor/etc/fstab.qcom
 
     # Set permissions for persist partition
     chown root system /mnt/vendor/persist
@@ -109,16 +106,6 @@ on late-fs
     write /sys/block/sda/queue/nr_requests 256
     write /sys/block/dm-0/queue/read_ahead_kb 2048
     write /sys/block/dm-1/queue/read_ahead_kb 2048
-
-    # Start services for bootanim
-    start servicemanager
-    start surfaceflinger
-    start bootanim
-    start vendor.configstore-hal
-    start vendor.gralloc-2-0
-
-    # Mount RW partitions which need run fsck
-    mount_all /vendor/etc/fstab.qcom --late
 
 on post-fs
     # start clearpad_post_probe when filesystem is available for fwflash
