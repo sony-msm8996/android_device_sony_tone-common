@@ -150,7 +150,9 @@ PRODUCT_PACKAGES += \
     init.qcom.msim.sh \
     init.qcom.power.rc \
     init.qcom.usb.rc \
-    ueventd.qcom.rc
+    ueventd.qcom.rc \
+    sensors.rc \
+    sensors_settings
 
 # Display
 PRODUCT_PACKAGES += \

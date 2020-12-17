@@ -179,24 +179,6 @@ on post-fs-data
     mkdir /dev/socket/location/mq 0770 gps gps
     mkdir /dev/socket/location/xtra 0770 gps gps
 
-    # SSC/SLPI sensors
-    chown system system /mnt/vendor/persist/sensors
-    chown system system /mnt/vendor/persist/sensors/sns.reg
-    chown system system /mnt/vendor/persist/sensors/sensors_list.txt
-    chown system system /mnt/vendor/persist/sensors/registry
-    chown system system /mnt/vendor/persist/sensors/registry/registry
-    chown system system /mnt/vendor/persist/sensors/registry/registry/sensors_registry
-    chown system system /mnt/vendor/persist/sensors/sensors_settings
-    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_config
-    chown system system /mnt/vendor/persist/sensors/registry/sns_reg_version
-    chown system system /mnt/vendor/persist/sensors/registry/config
-    chmod 0664 /mnt/vendor/persist/sensors/sensors_settings
-
-    # /dev/sensors only supports an ioctl to get the current SLPI timestamp;
-    # allow the sensors daemon to perform this as non-root
-    chown root system /dev/sensors
-    chmod 0660 /dev/sensors
-
     # Create /data/vendor/time folder for time-services
     mkdir /data/vendor/time 0700 system system
 
@@ -524,12 +506,6 @@ service vendor.dataqti /vendor/bin/qti
     class main
     user radio
     group radio oem_2901 diag usb
-    writepid /dev/cpuset/system-background/tasks
-
-service vendor.sensors.qti /vendor/bin/sensors.qti
-    class core
-    user system
-    group system
     writepid /dev/cpuset/system-background/tasks
 
 on property:ro.vendor.use_data_netmgrd=false

@@ -679,16 +679,14 @@ vendor/lib/libsuntory_utils.so
 vendor/lib/libta_drm_ext.so|def802a5eef691a9b48a191f56116c8da900fdd3
 vendor/lib/vendor.semc.hardware.secd@1.0_vendor.so
 
-# Sensors
-vendor/bin/sensors.qti|34b67b318750daa1170730f4ffc0a9b46ee1777b
-vendor/lib64/hw/activity_recognition.msm8996.so|64901bc837ed32dee28bbff9a60df7d8ac5cd140
-vendor/lib64/libsensor1.so|f8524d62d2ad52849f4a13b018baf08d0eac8180
-vendor/lib64/libsensor_reg.so|8ca48358abf3f8f84f86036b02dbb210a5870742
-vendor/lib64/sensors.ssc.so|f4108878f452ff445bfee7d6f624e350353469e5
-vendor/lib/hw/activity_recognition.msm8996.so|6bec19a06f59abca3d43cd6a83c88fbe9daea7f6
-vendor/lib/libsensor1.so|de27fcd2ab95788e09310c5f2cf58a0540afcfe3
-vendor/lib/libsensor_reg.so|9a3568dc423598886b7f16d91d76e53cd0220387
-vendor/lib/sensors.ssc.so|2b7c1996cc12e6fac7d1fa09c5dfe1c93a1311d9
+# Sensors - From SODP
+vendor/bin/sensors.qcom|f42719b0b51762a40adc32c5b6a2eba44190d19c
+vendor/lib/hw/sensors.msm8996.so|1837ac8d277bb60cbf8f0e127a321f01694bdb66
+vendor/lib/libsensor1.so|47e43fd3dd565ca8b6c63b79f47d6413a614a4bf
+vendor/lib/libsensor_reg.so|b687f3dff920edc48a31c7908b3fa57ceb275dc4
+vendor/lib64/hw/sensors.msm8996.so|1d19ad0062e71cb7c1d93522fb5d4220ab725ca4
+vendor/lib64/libsensor1.so|806105a6dce77d249c9caa70553189cc65a8fa33
+vendor/lib64/libsensor_reg.so|6d6dee74b1876f15637f67fbf59e4ecba1c3e07a
 
 # SoMC: Radio
 vendor/lib/vendor.somc.hardware.radio@1.0.so
