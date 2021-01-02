@@ -184,6 +184,11 @@ include device/qcom/sepolicy/sepolicy.mk
 
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
+# Shim
+TARGET_LD_SHIM_LIBS := \
+  /system/lib64/lib-imsvt.so|libtone_shim.so \
+  /system/lib64/lib-imsvideocodec.so|libtone_shim.so
+
 # Vendor init
 TARGET_INIT_VENDOR_LIB := libinit_msm8996
 TARGET_RECOVERY_DEVICE_MODULES := libinit_msm8996
