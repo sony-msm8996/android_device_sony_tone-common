@@ -220,20 +220,20 @@ vendor/lib64/vendor.qti.ims.rcsconfig@1.0.so|dd4aebcdd0f711b15ef173601ec121e7a91
 vendor/lib64/vendor.qti.latency@2.0.so|68fd46a6f26e2e101a6ecb0c40643fd5e137d716
 
 # CMN firmware
-etc/firmware/cmnlib.b00
-etc/firmware/cmnlib.b01
-etc/firmware/cmnlib.b02
-etc/firmware/cmnlib.b03
-etc/firmware/cmnlib.b04
-etc/firmware/cmnlib.b05
-etc/firmware/cmnlib.mdt
-etc/firmware/cmnlib64.b00
-etc/firmware/cmnlib64.b01
-etc/firmware/cmnlib64.b02
-etc/firmware/cmnlib64.b03
-etc/firmware/cmnlib64.b04
-etc/firmware/cmnlib64.b05
-etc/firmware/cmnlib64.mdt
+etc/firmware/cmnlib.b00:vendor/etc/firmware/cmnlib.b00
+etc/firmware/cmnlib.b01:vendor/etc/firmware/cmnlib.b01
+etc/firmware/cmnlib.b02:vendor/etc/firmware/cmnlib.b02
+etc/firmware/cmnlib.b03:vendor/etc/firmware/cmnlib.b03
+etc/firmware/cmnlib.b04:vendor/etc/firmware/cmnlib.b04
+etc/firmware/cmnlib.b05:vendor/etc/firmware/cmnlib.b05
+etc/firmware/cmnlib.mdt:vendor/etc/firmware/cmnlib.mdt
+etc/firmware/cmnlib64.b00:vendor/etc/firmware/cmnlib64.b00
+etc/firmware/cmnlib64.b01:vendor/etc/firmware/cmnlib64.b01
+etc/firmware/cmnlib64.b02:vendor/etc/firmware/cmnlib64.b02
+etc/firmware/cmnlib64.b03:vendor/etc/firmware/cmnlib64.b03
+etc/firmware/cmnlib64.b04:vendor/etc/firmware/cmnlib64.b04
+etc/firmware/cmnlib64.b05:vendor/etc/firmware/cmnlib64.b05
+etc/firmware/cmnlib64.mdt:vendor/etc/firmware/cmnlib64.mdt
 
 # DPM - from B2N_sprout - PPR1.180610.011
 bin/dpmd|6c511738d83ba1cfdc75b00b9bd676d231914f3a
@@ -255,12 +255,12 @@ vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|05af4880ad4c633fe60750ff49525e62822
 vendor/lib64/libdpmqmihal.so|be20256e3250ab603afc0da63d0b6f91b220df84
 
 # DRM and SEE
-lib64/libGPTEE_system.so
-lib64/libQTEEConnector_system.so
-lib64/vendor.qti.hardware.qteeconnector@1.0.so
-lib/libGPTEE_system.so
-lib/libQTEEConnector_system.so
-lib/vendor.qti.hardware.qteeconnector@1.0.so
+lib64/libGPTEE_system.so:vendor/lib64/libGPTEE_system.so
+lib64/libQTEEConnector_system.so:vendor/lib64/libQTEEConnector_system.so
+lib64/vendor.qti.hardware.qteeconnector@1.0.so:vendor/lib64/vendor.qti.hardware.qteeconnector@1.0.so
+lib/libGPTEE_system.so:vendor/lib/libGPTEE_system.so
+lib/libQTEEConnector_system.so:vendor/lib/libQTEEConnector_system.so
+lib/vendor.qti.hardware.qteeconnector@1.0.so:vendor/lib/vendor.qti.hardware.qteeconnector@1.0.so
 vendor/bin/qseecomd
 vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
 vendor/lib64/libdrmfs.so
@@ -441,10 +441,10 @@ vendor/firmware/a530_zap.elf
 vendor/firmware/a530_zap.mdt
 
 # IDD
-lib/libidd-plat.so
-lib/vendor.semc.system.idd@1.0.so
-lib64/libidd-plat.so
-lib64/vendor.semc.system.idd@1.0.so
+lib/libidd-plat.so:vendor/lib/libidd-plat.so
+lib/vendor.semc.system.idd@1.0.so:vendor/lib/vendor.semc.system.idd@1.0.so
+lib64/libidd-plat.so:vendor/lib64/libidd-plat.so
+lib64/vendor.semc.system.idd@1.0.so:vendor/lib64/vendor.semc.system.idd@1.0.so
 vendor/bin/iddd
 vendor/bin/hw/vendor.semc.system.idd@1.0-service
 vendor/bin/hw/vendor.semc.system.idd.fallback@1.0-service
@@ -677,9 +677,9 @@ vendor/lib/libnetmgr.so
 vendor/radio/qcril_database/qcril.db
 
 # SECD
-lib64/libdevice_security_client.so
-lib64/libtpm.so
-lib64/vendor.semc.hardware.secd@1.0.so
+lib64/libdevice_security_client.so:vendor/lib64/libdevice_security_client.so
+lib64/libtpm.so:vendor/lib64/libtpm.so
+lib64/vendor.semc.hardware.secd@1.0.so:vendor/lib64/vendor.semc.hardware.secd@1.0.so
 vendor/bin/hw/vendor.semc.hardware.secd@1.0-service
 vendor/bin/secd
 vendor/lib64/lib_asb_tee.so
@@ -706,14 +706,14 @@ vendor/lib/libta_drm_ext.so|def802a5eef691a9b48a191f56116c8da900fdd3
 vendor/lib/vendor.semc.hardware.secd@1.0_vendor.so
 
 # Sensors
-lib64/libqmi_cci_system.so
-lib64/libsensor1.so
-lib64/libsensor_reg.so
-lib64/sensors.finger-pickup.so
-lib/libqmi_cci_system.so
-lib/libsensor1.so
-lib/libsensor_reg.so
-lib/sensors.finger-pickup.so
+lib64/libqmi_cci_system.so:vendor/lib64/libqmi_cci_system.so
+lib64/libsensor1.so:vendor/lib64/libsensor1.so
+lib64/libsensor_reg.so:vendor/lib64/libsensor_reg.so
+lib64/sensors.finger-pickup.so:vendor/lib64/sensors.finger-pickup.so
+lib/libqmi_cci_system.so:vendor/lib/libqmi_cci_system.so
+lib/libsensor1.so:vendor/lib/libsensor1.so
+lib/libsensor_reg.so:vendor/lib/libsensor_reg.so
+lib/sensors.finger-pickup.so:vendor/lib/sensors.finger-pickup.so
 vendor/bin/sensors.qcom
 vendor/lib64/hw/activity_recognition.msm8996.so
 vendor/lib64/libsdsprpc.so
@@ -737,18 +737,18 @@ vendor/bin/mlog_qmi_service
 vendor/bin/sct_service
 
 # TA
+lib/libMiscTAApi.so:vendor/lib/libMiscTAApi.so
+lib/libMiscTaWrapper.so:vendor/lib/libMiscTaWrapper.so
+lib/vendor.somc.hardware.miscta@1.0.so:vendor/lib/vendor.somc.hardware.miscta@1.0.so
+lib/vendor.semc.hardware.drm@1.0.so:vendor/lib/vendor.semc.hardware.drm@1.0.so
+lib64/vendor.semc.hardware.drm@1.0.so:vendor/lib64/vendor.semc.hardware.drm@1.0.so
+lib64/libMiscTAApi.so:vendor/lib64/libMiscTAApi.so
+lib64/libMiscTaWrapper.so:vendor/lib64/libMiscTaWrapper.so
+lib64/vendor.somc.hardware.miscta@1.0.so:vendor/lib64/vendor.somc.hardware.miscta@1.0.so
 # tad_static moved from rootfs to vendor
 vendor/bin/tad_static|f9eeb8583656ad2a79752c8de69e144507f8b953
 vendor/bin/taimport
 vendor/bin/updatemiscta
-lib/libMiscTAApi.so
-lib/libMiscTaWrapper.so
-lib/vendor.somc.hardware.miscta@1.0.so
-lib/vendor.semc.hardware.drm@1.0.so
-lib64/vendor.semc.hardware.drm@1.0.so
-lib64/libMiscTAApi.so
-lib64/libMiscTaWrapper.so
-lib64/vendor.somc.hardware.miscta@1.0.so
 vendor/bin/hw/vendor.somc.hardware.miscta@1.0-service
 vendor/bin/ta_qmi_service
 -vendor/lib/libmiscta.so
@@ -773,62 +773,62 @@ vendor/bin/time_daemon|d67f1c50583b5efca0f5baea00a51056a798b7f8
 vendor/lib64/libtime_genoff.so|8f4c1f9ace6af463b241b130d6872b5d39cc7b2a
 
 # TrustZone firmware
-etc/firmware/tzattest.b00
-etc/firmware/tzattest.b01
-etc/firmware/tzattest.b02
-etc/firmware/tzattest.b03
-etc/firmware/tzattest.b04
-etc/firmware/tzattest.b05
-etc/firmware/tzattest.b06
-etc/firmware/tzattest.mdt
-etc/firmware/tzhdcp.b00
-etc/firmware/tzhdcp.b01
-etc/firmware/tzhdcp.b02
-etc/firmware/tzhdcp.b03
-etc/firmware/tzhdcp.b04
-etc/firmware/tzhdcp.b05
-etc/firmware/tzhdcp.b06
-etc/firmware/tzhdcp.mdt
-etc/firmware/tzlibasb.b00
-etc/firmware/tzlibasb.b01
-etc/firmware/tzlibasb.b02
-etc/firmware/tzlibasb.b03
-etc/firmware/tzlibasb.b04
-etc/firmware/tzlibasb.b05
-etc/firmware/tzlibasb.b06
-etc/firmware/tzlibasb.mdt
-etc/firmware/tzsuntory.b00
-etc/firmware/tzsuntory.b01
-etc/firmware/tzsuntory.b02
-etc/firmware/tzsuntory.b03
-etc/firmware/tzsuntory.b04
-etc/firmware/tzsuntory.b05
-etc/firmware/tzsuntory.b06
-etc/firmware/tzsuntory.mdt
-etc/firmware/tztpm.b00
-etc/firmware/tztpm.b01
-etc/firmware/tztpm.b02
-etc/firmware/tztpm.b03
-etc/firmware/tztpm.b04
-etc/firmware/tztpm.b05
-etc/firmware/tztpm.b06
-etc/firmware/tztpm.mdt
-etc/firmware/tzwidevine.b00
-etc/firmware/tzwidevine.b01
-etc/firmware/tzwidevine.b02
-etc/firmware/tzwidevine.b03
-etc/firmware/tzwidevine.b04
-etc/firmware/tzwidevine.b05
-etc/firmware/tzwidevine.b06
-etc/firmware/tzwidevine.mdt
-etc/firmware/tzwvcpybuf.b00
-etc/firmware/tzwvcpybuf.b01
-etc/firmware/tzwvcpybuf.b02
-etc/firmware/tzwvcpybuf.b03
-etc/firmware/tzwvcpybuf.b04
-etc/firmware/tzwvcpybuf.b05
-etc/firmware/tzwvcpybuf.b06
-etc/firmware/tzwvcpybuf.mdt
+etc/firmware/tzattest.b00:vendor/etc/firmware/tzattest.b00
+etc/firmware/tzattest.b01:vendor/etc/firmware/tzattest.b01
+etc/firmware/tzattest.b02:vendor/etc/firmware/tzattest.b02
+etc/firmware/tzattest.b03:vendor/etc/firmware/tzattest.b03
+etc/firmware/tzattest.b04:vendor/etc/firmware/tzattest.b04
+etc/firmware/tzattest.b05:vendor/etc/firmware/tzattest.b05
+etc/firmware/tzattest.b06:vendor/etc/firmware/tzattest.b06
+etc/firmware/tzattest.mdt:vendor/etc/firmware/tzattest.mdt
+etc/firmware/tzhdcp.b00:vendor/etc/firmware/tzhdcp.b00
+etc/firmware/tzhdcp.b01:vendor/etc/firmware/tzhdcp.b01
+etc/firmware/tzhdcp.b02:vendor/etc/firmware/tzhdcp.b02
+etc/firmware/tzhdcp.b03:vendor/etc/firmware/tzhdcp.b03
+etc/firmware/tzhdcp.b04:vendor/etc/firmware/tzhdcp.b04
+etc/firmware/tzhdcp.b05:vendor/etc/firmware/tzhdcp.b05
+etc/firmware/tzhdcp.b06:vendor/etc/firmware/tzhdcp.b06
+etc/firmware/tzhdcp.mdt:vendor/etc/firmware/tzhdcp.mdt
+etc/firmware/tzlibasb.b00:vendor/etc/firmware/tzlibasb.b00
+etc/firmware/tzlibasb.b01:vendor/etc/firmware/tzlibasb.b01
+etc/firmware/tzlibasb.b02:vendor/etc/firmware/tzlibasb.b02
+etc/firmware/tzlibasb.b03:vendor/etc/firmware/tzlibasb.b03
+etc/firmware/tzlibasb.b04:vendor/etc/firmware/tzlibasb.b04
+etc/firmware/tzlibasb.b05:vendor/etc/firmware/tzlibasb.b05
+etc/firmware/tzlibasb.b06:vendor/etc/firmware/tzlibasb.b06
+etc/firmware/tzlibasb.mdt:vendor/etc/firmware/tzlibasb.mdt
+etc/firmware/tzsuntory.b00:vendor/etc/firmware/tzsuntory.b00
+etc/firmware/tzsuntory.b01:vendor/etc/firmware/tzsuntory.b01
+etc/firmware/tzsuntory.b02:vendor/etc/firmware/tzsuntory.b02
+etc/firmware/tzsuntory.b03:vendor/etc/firmware/tzsuntory.b03
+etc/firmware/tzsuntory.b04:vendor/etc/firmware/tzsuntory.b04
+etc/firmware/tzsuntory.b05:vendor/etc/firmware/tzsuntory.b05
+etc/firmware/tzsuntory.b06:vendor/etc/firmware/tzsuntory.b06
+etc/firmware/tzsuntory.mdt:vendor/etc/firmware/tzsuntory.mdt
+etc/firmware/tztpm.b00:vendor/etc/firmware/tztpm.b00
+etc/firmware/tztpm.b01:vendor/etc/firmware/tztpm.b01
+etc/firmware/tztpm.b02:vendor/etc/firmware/tztpm.b02
+etc/firmware/tztpm.b03:vendor/etc/firmware/tztpm.b03
+etc/firmware/tztpm.b04:vendor/etc/firmware/tztpm.b04
+etc/firmware/tztpm.b05:vendor/etc/firmware/tztpm.b05
+etc/firmware/tztpm.b06:vendor/etc/firmware/tztpm.b06
+etc/firmware/tztpm.mdt:vendor/etc/firmware/tztpm.mdt
+etc/firmware/tzwidevine.b00:vendor/etc/firmware/tzwidevine.b00
+etc/firmware/tzwidevine.b01:vendor/etc/firmware/tzwidevine.b01
+etc/firmware/tzwidevine.b02:vendor/etc/firmware/tzwidevine.b02
+etc/firmware/tzwidevine.b03:vendor/etc/firmware/tzwidevine.b03
+etc/firmware/tzwidevine.b04:vendor/etc/firmware/tzwidevine.b04
+etc/firmware/tzwidevine.b05:vendor/etc/firmware/tzwidevine.b05
+etc/firmware/tzwidevine.b06:vendor/etc/firmware/tzwidevine.b06
+etc/firmware/tzwidevine.mdt:vendor/etc/firmware/tzwidevine.mdt
+etc/firmware/tzwvcpybuf.b00:vendor/etc/firmware/tzwvcpybuf.b00
+etc/firmware/tzwvcpybuf.b01:vendor/etc/firmware/tzwvcpybuf.b01
+etc/firmware/tzwvcpybuf.b02:vendor/etc/firmware/tzwvcpybuf.b02
+etc/firmware/tzwvcpybuf.b03:vendor/etc/firmware/tzwvcpybuf.b03
+etc/firmware/tzwvcpybuf.b04:vendor/etc/firmware/tzwvcpybuf.b04
+etc/firmware/tzwvcpybuf.b05:vendor/etc/firmware/tzwvcpybuf.b05
+etc/firmware/tzwvcpybuf.b06:vendor/etc/firmware/tzwvcpybuf.b06
+etc/firmware/tzwvcpybuf.mdt:vendor/etc/firmware/tzwvcpybuf.mdt
 
 # WiFi
 vendor/bin/cnss-daemon
