@@ -31,6 +31,48 @@ if [ ! -f "${HELPER}" ]; then
 fi
 source "${HELPER}"
 
+
+function blob_fixup() {
+    case "${1}" in
+    vendor/lib64/libcameralight.so)
+        ;&
+    vendor/lib/libcameralight.so)
+        ;&
+    vendor/lib64/lib_fpc_tac_shared.so)
+        ;&
+    vendor/lib/lib_fpc_tac_shared.so)
+        sed -i "s/\/system\/etc\//\/vendor\/etc\//g" "${2}"
+        ;;
+    vendor/lib/libSecureUILib.so)
+        ;&
+    vendor/lib/libGPTEE_vendor.so)
+        ;&
+    vendor/lib/libGPTEE_system.so)
+        ;&
+    vendor/lib/lib_asb_tee.so)
+        ;&
+    vendor/lib/libtzdrmgenprov.so)
+        ;&
+    vendor/lib64/libSecureUILib.so)
+        ;&
+    vendor/lib64/libGPTEE_vendor.so)
+        ;&
+    vendor/lib64/libtpm.so)
+        ;&
+    vendor/lib64/libGPTEE_system.so)
+        ;&
+    vendor/lib64/lib_asb_tee.so)
+        ;&
+    vendor/lib64/libtee.so)
+        ;&
+    vendor/lib64/libtzdrmgenprov.so)
+        ;&
+    vendor/bin/secd)
+        sed -i "s/\/system\/etc\/firmware/\/vendor\/etc\/firmware/g" "${2}"
+        ;;
+    esac
+}
+
 # Default to sanitizing the vendor folder before extraction
 CLEAN_VENDOR=true
 
