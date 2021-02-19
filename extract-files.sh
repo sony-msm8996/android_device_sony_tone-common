@@ -43,10 +43,10 @@ function blob_fixup() {
         sed -i "s/libhidltransport.so/libcutils-v29.so\x00\x00\x00/" "${2}"
         ;;
     vendor/bin/imsrcsd)
-        "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+        sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
         ;;
     vendor/lib64/lib-uceservice.so)
-        "${PATCHELF}" --add-needed "libbase_shim.so" "${2}"
+        sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
         ;;
     vendor/lib64/libsettings.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v28.so" "${2}"
