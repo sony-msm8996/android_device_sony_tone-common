@@ -5,6 +5,3 @@ allow init adsprpcd_file:filesystem { mount relabelfrom relabelto };
 
 # Allow init to mount on idd_rca_dir, idd_root_dir, qns_file
 allow init { idd_rca_dir idd_root_dir qns_file }:dir mounton;
-
-# Allow init to check LD_PRELOAD for secd process
-allow init secd:process noatsecure;
