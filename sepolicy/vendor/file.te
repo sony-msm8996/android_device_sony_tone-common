@@ -25,3 +25,6 @@ type sysfs_fpc, sysfs_type, fs_type;
 type sysfs_msm_subsys, sysfs_type, fs_type;
 type sysfs_wifi, sysfs_type, fs_type;
 type tad_socket, file_type;
+
+# Fingerprint
+type sysfs_fingerprint, sysfs_type, fs_type;
