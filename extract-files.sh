@@ -45,11 +45,23 @@ function blob_fixup() {
     vendor/bin/imsrcsd)
         sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
         ;;
+    vendor/bin/slim_daemon)
+        "${PATCHELF}" --replace-needed "android.frameworks.sensorservice@1.0.so" "android.frameworks.sensorservice@1.0-v27.so" "${2}"
+        ;;
+    vendor/lib64/hw/vulkan.msm8996.so)
+        sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
+        ;;
     vendor/lib64/lib-uceservice.so)
         sed -i "s/libhidltransport.so/libbase_shim.so\x00\x00\x00\x00/" "${2}"
         ;;
     vendor/lib64/libsettings.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-full.so" "libprotobuf-cpp-full-v28.so" "${2}"
+        ;;
+    vendor/lib64/vendor.qti.gnss@1.0_vendor.so)
+        "${PATCHELF}" --replace-needed "android.hardware.gnss@1.0.so" "android.hardware.gnss@1.0-v27.so" "${2}"
+        ;;
+    vendor/lib/hw/vulkan.msm8996.so)
+        sed -i "s/vulkan.msm8953.so/vulkan.msm8996.so/g" "${2}"
         ;;
     vendor/lib/libwvhidl.so)
         "${PATCHELF}" --replace-needed "libprotobuf-cpp-lite.so" "libprotobuf-cpp-lite-v28.so" "${2}"
