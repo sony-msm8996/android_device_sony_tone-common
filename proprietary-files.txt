@@ -245,50 +245,21 @@ vendor/etc/init/dpmQmiMgr.rc|67569302d3a8828a9118c835e5b69c51b0c8ac68
 vendor/lib64/com.qualcomm.qti.dpm.api@1.0.so|a70cfc1be3e06cde6318d6969e114429fe1950bb
 vendor/lib64/libdpmqmihal.so|25d74c0e867f023b71a7c599ab6d213c7de2725d
 
-# DRM and SEE
-lib64/libGPTEE_system.so
-lib64/libQTEEConnector_system.so
-lib64/vendor.qti.hardware.qteeconnector@1.0.so
-lib/libGPTEE_system.so
-lib/libQTEEConnector_system.so
-lib/vendor.qti.hardware.qteeconnector@1.0.so
-vendor/bin/qseecomd
-vendor/lib64/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib64/libdrmfs.so
-vendor/lib64/libdrmtime.so
-vendor/lib64/libGPreqcancel.so
-vendor/lib64/libGPreqcancel_svc.so
-vendor/lib64/libGPTEE_vendor.so
-vendor/lib64/liboemcrypto.so
-vendor/lib64/libqisl.so
-vendor/lib64/libQSEEComAPI.so
-vendor/lib64/libQTEEConnector_vendor.so
-vendor/lib64/librpmb.so
-vendor/lib64/libSecureUILib.so
-vendor/lib64/libsecureui.so|ab44674259c3cc72fc049d62d5943a1eb13d29ed
-vendor/lib64/libsecureui_svcsock.so
-vendor/lib64/libssd.so
-vendor/lib64/libStDrvInt.so
-vendor/lib64/libtzdrmgenprov.so
-vendor/lib64/vendor.qti.hardware.qteeconnector@1.0_vendor.so
-vendor/lib/hw/vendor.qti.hardware.qteeconnector@1.0-impl.so
-vendor/lib/libdrmfs.so
-vendor/lib/libdrmtime.so
-vendor/lib/libGPreqcancel.so
-vendor/lib/libGPreqcancel_svc.so
-vendor/lib/libGPTEE_vendor.so
-vendor/lib/liboemcrypto.so
-vendor/lib/libqisl.so
-vendor/lib/libQSEEComAPI.so
-vendor/lib/libQTEEConnector_vendor.so
-vendor/lib/librpmb.so
-vendor/lib/libSecureUILib.so
-vendor/lib/libsecureui.so|b1324c75816463d6393acda173b4c74f8acaf0dc
-vendor/lib/libsecureui_svcsock.so
-vendor/lib/libssd.so
-vendor/lib/libStDrvInt.so
-vendor/lib/libtzdrmgenprov.so
-vendor/lib/vendor.qti.hardware.qteeconnector@1.0_vendor.so
+# DRM and SEE - from - zuk z2_row - OPR1.170623.032.4.0.247_181017
+vendor/bin/qseecomd|c4459544ef344b3723456f2310bd6e80b67c85b5
+vendor/lib64/libGPreqcancel.so|ce1d5bb9b4660c821361789c96861946a9762fd4
+vendor/lib64/libGPreqcancel_svc.so|b87931212ef21cae934fe0318a043bed64f65107
+vendor/lib64/libQSEEComAPI.so|d3c9df87d95313873e7ff9b4f92825dabd449a35
+vendor/lib64/libSecureUILib.so|02464e2d488c71adc2b98f8f614a9716f6173cc1
+vendor/lib64/libStDrvInt.so|987a06865440e3c20ce3130d5e65d7bbe84a0c2b
+vendor/lib64/libdrmfs.so|4da0e9cb3fb2979a43d060a080c91ad638955b4e
+vendor/lib64/libdrmtime.so|d0ff3f243f399f4b8b3aeeb7f2667d094a95e3c6
+vendor/lib64/libqisl.so|5644c79eff7e4d3f8dedd7b5281d94e59d897a20
+vendor/lib64/librpmb.so|fce6cfc104360f715e9981e98e3bdc5bbf2a76bb
+vendor/lib64/libsecureui.so|194ae1dfe1fc8f6c519b7eb7ed0cb54956f9f8b4
+vendor/lib64/libsecureui_svcsock.so|96d4284fdc3202f72e51a22e6ed45875f7584aa2
+vendor/lib64/libssd.so|5d462e0c3e13183f5a3d038f4054dd0f12cb84c9
+vendor/lib/libQSEEComAPI.so|3becb53edd33a6bd8e84b8695cec09b133c1717d
 
 # DRM Widevine - from marlin - PPR2.181005.003
 vendor/bin/hw/android.hardware.drm@1.1-service.widevine|2c2455a218eb8d5368f1ccd39bea51be8364a0f3
@@ -813,6 +784,14 @@ etc/firmware/tzwvcpybuf.b04
 etc/firmware/tzwvcpybuf.b05
 etc/firmware/tzwvcpybuf.b06
 etc/firmware/tzwvcpybuf.mdt
+
+# TUI - from - z2_row - OPR1.170623.032.4.0.247_181017
+lib/vendor.qti.hardware.tui_comm@1.0.so|9731f132da85eb8dbecaaeb8de8aae688451de88
+lib64/vendor.qti.hardware.tui_comm@1.0.so|cb02db4598465bcb72363784245df14ac9c2adea
+vendor/bin/hw/vendor.qti.hardware.tui_comm@1.0-service-qti|3328d433e889426d16fbae33a3304d783c70c0d5
+vendor/etc/init/vendor.qti.hardware.tui_comm@1.0-service-qti.rc|2cfc563d7e1579374f001c94588fae7835a12ffc
+vendor/lib/vendor.qti.hardware.tui_comm@1.0_vendor.so|cf86dc8570d565961c0009139f661fe7b9b01e34
+vendor/lib64/vendor.qti.hardware.tui_comm@1.0_vendor.so|706bc2080f47aa13537e565cd11fc18c1e7e7d64
 
 # WiFi
 vendor/bin/cnss-daemon
