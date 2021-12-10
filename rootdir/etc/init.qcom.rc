@@ -79,11 +79,11 @@ on fs
     # Configure idd/rca directories
     chown oem_2987 oem_2987 /idd
     chmod 0751 /idd
-    exec /vendor/bin/rm -r /idd/lost+found
+    rmdir /idd/lost+found
     symlink /idd /mnt/idd
     chown oem_2987 oem_2987 /rca
     chmod 0750 /rca
-    exec /vendor/bin/rm -r /rca/lost+found
+    rmdir /rca/lost+found
     symlink /rca /mnt/rca
 
     # Start HW service manager early
