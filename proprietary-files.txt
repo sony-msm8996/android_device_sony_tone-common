@@ -425,6 +425,8 @@ product/lib64/libimsmedia_jni.so:system_ext/lib64/libimsmedia_jni.so|3540752cc36
 -product/priv-app/ims/ims.apk:system_ext/priv-app/ims/ims.apk|9c4ca91e0ec7a567d22251d7ca0640abf13fdd7b
 
 # IMS
+lib/libdiag_system.so
+lib64/libdiag_system.so
 lib64/com.qualcomm.qti.imscmservice@1.0.so:system_ext/lib64/com.qualcomm.qti.imscmservice@1.0.so
 lib64/lib-imscamera.so:system_ext/lib64/lib-imscamera.so
 lib64/lib-imsvideocodec.so:system_ext/lib64/lib-imsvideocodec.so
