@@ -90,16 +90,17 @@ BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 
 # Camera
+USE_DEVICE_SPECIFIC_CAMERA := true
+DEVICE_SPECIFIC_CAMERA_PATH := $(VENDOR_PATH)/camera
 BOARD_QTI_CAMERA_32BIT_ONLY := true
+BOARD_QTI_CAMERA_V2 := true
 TARGET_SUPPORT_HAL1 := false
 TARGET_USES_MEDIA_EXTENSIONS := true
-TARGET_USES_QTI_CAMERA_DEVICE := true
-USE_DEVICE_SPECIFIC_CAMERA := true
 
 # API Override
 TARGET_PROCESS_SDK_VERSION_OVERRIDE := \
-    /vendor/bin/mm-qcamera-daemon=26 \
-    /system/vendor/bin/mm-qcamera-daemon=26 \
+    /vendor/bin/mm-qcamera-daemon=25 \
+    /system/vendor/bin/mm-qcamera-daemon=25 \
     /vendor/bin/qseecomd=26 \
     /system/vendor/bin/qseecomd=26
 
@@ -182,7 +183,6 @@ include device/qcom/sepolicy-legacy-um/SEPolicy.mk
 BOARD_SEPOLICY_DIRS += $(VENDOR_PATH)/sepolicy/vendor
 
 TARGET_LD_SHIM_LIBS := \
-/vendor/lib/hw/camera.qcom.so|libcamera_tone.so \
 /vendor/lib/libexcal_pal.so|libutilscallstack.so \
 /vendor/lib64/libexcal_pal.so|libutilscallstack.so
 

@@ -130,7 +130,15 @@ PRODUCT_PACKAGES += \
 # Camera
 PRODUCT_PACKAGES += \
     android.hardware.camera.provider@2.4-impl \
-    android.hardware.camera.provider@2.4-service
+    android.hardware.camera.provider@2.4-service \
+    Snap \
+    camera.msm8996
+
+PRODUCT_PACKAGES += \
+    libmmcamera_interface \
+    libmmjpeg_interface \
+    libmm-qcamera \
+    libqomx_core
 
 # Charger
 PRODUCT_PACKAGES += charger_res_images
@@ -345,10 +353,6 @@ PRODUCT_PACKAGES += \
 # Soong namespaces
 PRODUCT_SOONG_NAMESPACES += \
     $(LOCAL_PATH)
-
-# Symbols
-PRODUCT_PACKAGES += \
-    libcamera_tone
 
 # Telephony
 PRODUCT_PACKAGES += \

@@ -55,9 +55,25 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.bt.bdaddr_path=/data/etc/bluetooth_bdaddr \
     persist.vendor.bt.enable.splita2dp=false
 
+# Camera Debug
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.hal.debug=0 \
+    persist.camera.kpi.debug=0 \
+    persist.camera.global.debug=0
+
+# Disable Dual Camera
+PRODUCT_PROPERTY_OVERRIDES += \
+    persist.camera.dual.camera.mpo=0 \
+    persist.camera.dc.frame.sync=0 \
+    persist.camera.dcrf.enable=0
+
 # Camera
 PRODUCT_PROPERTY_OVERRIDES += \
-    camera.disable_zsl_mode=1
+    persist.camera.gyro.disable=1 \
+    persist.camera.feature.cac=0 \
+    persist.camera.ois.disable=0 \
+    persist.camera.eis.enable=0 \
+    persist.camera.zsl.mode=1
 
 # Charger
 PRODUCT_PRODUCT_PROPERTIES += \
